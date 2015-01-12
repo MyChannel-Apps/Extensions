@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macromedia-extension id="" name="KFramwork" version="1.0.0.beta" type="documenttype">
+	<products>
+		<product name="Dreamweaver" version="4" primary="true" />
+	</products>
+	<download>https://github.com/MyChannel-Apps/Extensions/blob/master/Adobe%20Dreamweaver/KFramework.zxp?raw=true</download>
+	<author name="Adrian Preuß, MyChannel-Apps.de" />
+	<license-agreement><![CDATA[The MIT License (MIT)
+
+Copyright (c) 2015 MyChannel Apps
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+]]></license-agreement>
+	<description>
+		<![CDATA[Toolset from MyChannel-Apps for Knuddels]]>
+	</description>
+	<ui-access> 
+		<![CDATA[Click on File > New... and select a new project with the KFramework.]]>
+	</ui-access> 
+	<files>
+		<file name="mca.xml" destination="$dreamweaver/configuration/strings/" />
+	</files>
+	<configuration-changes>
+		<documenttype-changes>
+			<documenttype-insert>
+				<documenttype id="MCA" internaltype="Text" winfileextension="mca" macfileextension="mca" file="Default.js" writebyteordermark="false">
+					<TITLE>
+						<MMString:loadString id="MCA_Knuddels_Title" />
+					</TITLE>
+					<description>
+						<MMString:loadString id="MCA_Knuddels_Description" />
+					</description>
+					<dtdcontext>js</dtdcontext>
+				</documenttype>
+			</documenttype-insert>
+		</documenttype-changes>
+	</configuration-changes>
+</macromedia-extension>
