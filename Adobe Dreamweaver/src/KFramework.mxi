@@ -39,7 +39,7 @@ SOFTWARE.]]></license-agreement>
 		<file source="configuration/Shared/MM/Images/type_bool.gif" destination="$dreamweaver/configuration/Shared/MM/Images/" />
 		<file source="configuration/Shared/MM/Images/type_string.gif" destination="$dreamweaver/configuration/Shared/MM/Images/" />
 		
-		<!--<file source="configuration/CodeHints/KFramework.xml" destination="$dreamweaver/configuration/CodeHints/KFramework.xml" file-type="ordinary" />-->
+		<file source="configuration/CodeHints/KFramework.xml" destination="$dreamweaver/configuration/CodeHints/" file-type="ordinary" />
 		<file source="configuration/CodeHints/Knuddels.xml" destination="$dreamweaver/configuration/CodeHints/" file-type="ordinary" />
 		<file source="configuration/DocumentTypes/NewDocuments/main.js" destination="$dreamweaver/configuration/DocumentTypes/NewDocuments/" />
         <file source="Strings/MCA.xml" destination="$dreamweaver/Strings/" />

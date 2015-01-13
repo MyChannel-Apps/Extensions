@@ -1,0 +1,62 @@
+<codehints xmlns:MMString="http://www.adobe.com/schemes/data/string/">
+	<menugroup MMString:name="codehints_kframework" id="CodeHints_KFramework" version="1.0">
+		<description>
+			<![CDATA[TESTDESCRIPTION KFRAMEWORK]]> 
+		</description>
+		
+		<!-- App -->
+		<function pattern="App" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="App" />
+		<menu pattern="App" classpattern="App" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
+			<method pattern="mayJoinChannel" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+			<method pattern="maySendPublicMessage" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+			<method pattern="onAppStart" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+			<method pattern="onKnuddelReceived" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+			<method pattern="onPrepareShutdown" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+			<method pattern="onPrivateMessage" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+			<method pattern="onPublicMessage" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+			<method pattern="onShutdown" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+			<method pattern="onUserDiced" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+			<method pattern="onUserJoined" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+			<method pattern="onUserLeft" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+		</menu>
+	
+		<!-- KnuddelsServer -->
+		<function pattern="KnuddelsServer" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="KnuddelsServer" />
+		<menu pattern="KnuddelsServer" classpattern="KnuddelsServer" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
+			<method pattern="canAccessUser(userId)" retType="Boolean" static="true" object="Boolean" icon="Shared/MM/Images/type_bool.gif">
+				<parammenu pattern="(" name="userId" index="0">
+					<parammenuitem label="userId" value="0" datatype="number" icon="Shared/MM/Images/type_int.gif" />
+				</parammenu>
+			</method>
+			<method pattern="getAppDeveloper()" static="true" retType="User" object="User" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getAppVersion()" static="true" retType="Number" object="Number" icon="Shared/MM/Images/type_int.png" />
+			<method pattern="getChannel()" retType="Channel" static="true" object="Channel" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getDefaultBotUser()" static="true" retType="BotUser" object="BotUser" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getDefaultLogger()" static="true" retType="KLogger" object="KLogger" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getFullImagePath(imageName)" static="true" retType="String" object="String" icon="Shared/MM/Images/type_string.gif" />
+			<method pattern="getFullSystemImagePath(imageName)" static="true" retType="String" object="String" icon="Shared/MM/Images/type_string.gif" />
+			<method pattern="getNickCorrectCase(userId)" retType="String" static="true" object="String" icon="Shared/MM/Images/type_string.gif">
+				<parammenu pattern="(" name="userId" index="0">
+					<parammenuitem label="userId" value="0" datatype="number" icon="Shared/MM/Images/type_int.gif" />
+				</parammenu>
+			</method>
+			<method pattern="getPersistence()" static="true" retType="AppPersistence" object="AppPersistence" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getUser(userId)" retType="User" static="true" object="User" icon="Shared/MM/Images/hintClass.gif">
+				<parammenu pattern="(" name="userId" index="0">
+					<parammenuitem label="userId" value="0" datatype="number" icon="Shared/MM/Images/type_int.gif" />
+				</parammenu>
+			</method>
+			<method pattern="getUserId(nick)" retType="Integer" static="true" object="Integer" icon="Shared/MM/Images/type_int.gif">
+				<parammenu pattern="(" name="nick" index="0">
+					<parammenuitem label="nick" value="0" datatype="string" icon="Shared/MM/Images/type_string.gif" />
+				</parammenu>
+			</method>
+			<method pattern="refreshHooks()" static="true" retType="void" object="void" icon="Shared/MM/Images/hintFunction.png" />
+			<method pattern="userExists(nick)" retType="Boolean" static="true" object="Boolean" icon="Shared/MM/Images/type_bool.gif">
+				<parammenu pattern="(" name="nick" index="0">
+					<parammenuitem label="nick" value="0" datatype="string" icon="Shared/MM/Images/type_string.gif" />
+				</parammenu>
+			</method>
+		</menu>
+	</menugroup>
+</codehints>
