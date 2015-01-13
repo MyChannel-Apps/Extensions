@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<macromedia-extension id="" name="KFramwork" version="1.0.0.beta" type="codehint" force-quit="true" locked="false">
+<macromedia-extension id="" name="KFramwork" version="1.0.0.beta" type="codehint codesnippet" force-quit="true" locked="false">
 	<products>
 		<product name="Dreamweaver" version="4" primary="true" />
 	</products>
@@ -26,9 +26,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-]]></license-agreement>
+SOFTWARE.]]></license-agreement>
 	<description>
 		<![CDATA[Toolset from MyChannel-Apps for Knuddels]]>
 	</description>
@@ -36,21 +34,33 @@ SOFTWARE.
 		<![CDATA[Click on File > New... and select a new project with the KFramework.]]>
 	</ui-access> 
 	<files>
-		<file name="mca.xml" destination="$dreamweaver/configuration/strings/" />
+		<!-- Images -->
+		<file source="configuration/Shared/MM/Images/type_int.gif" destination="$dreamweaver/configuration/Shared/MM/Images/" />
+		<file source="configuration/Shared/MM/Images/type_bool.gif" destination="$dreamweaver/configuration/Shared/MM/Images/" />
+		<file source="configuration/Shared/MM/Images/type_string.gif" destination="$dreamweaver/configuration/Shared/MM/Images/" />
+		
+		<!--<file source="configuration/CodeHints/KFramework.xml" destination="$dreamweaver/configuration/CodeHints/KFramework.xml" file-type="ordinary" />-->
+		<file source="configuration/CodeHints/Knuddels.xml" destination="$dreamweaver/configuration/CodeHints/" file-type="ordinary" />
+		<file source="configuration/DocumentTypes/NewDocuments/main.js" destination="$dreamweaver/configuration/DocumentTypes/NewDocuments/" />
+        <file source="Strings/MCA.xml" destination="$dreamweaver/Strings/" />
+        <!--<file source="BuiltIn/Knuddels/" destination="$dreamweaver/configuration/BuiltIn" />-->
 	</files>
-	<configuration-changes>
-		<documenttype-changes>
-			<documenttype-insert>
-				<documenttype id="MCA" internaltype="Text" winfileextension="mca" macfileextension="mca" file="Default.js" writebyteordermark="false">
-					<TITLE>
-						<MMString:loadString id="MCA_Knuddels_Title" />
-					</TITLE>
-					<description>
-						<MMString:loadString id="MCA_Knuddels_Description" />
-					</description>
-					<dtdcontext>js</dtdcontext>
-				</documenttype>
-			</documenttype-insert>
-		</documenttype-changes>
-	</configuration-changes>
+	<documenttype-changes>
+		<documenttype-insert>
+			<documenttype file="main.js" id="JS" internaltype="Text" macfileextension="js" winfileextension="js" writebyteordermark="false" mimetype="text/javascript">
+				<TITLE>
+					<MMString:loadString id="MCA_Document_Name" />
+				</TITLE>
+				<description>
+					<MMString:loadString id="MCA_Document_Description" />
+				</description>
+			</documenttype>
+		</documenttype-insert>
+	</documenttype-changes>
+	<extensions-changes>
+		<extension-insert extension="JS" description="JavaScript" />
+	</extension-changes>
+	<signatures>
+		<signature name="KFramework extension for Dreamweaver" extensiontype="0" signed="true" certificateType="0" publisher="www.mychannel-apps.de" />
+	</signatures>
 </macromedia-extension>
