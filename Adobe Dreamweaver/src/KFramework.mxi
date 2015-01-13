@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<macromedia-extension id="" name="KFramwork" version="1.0.0.beta" type="documenttype">
+<macromedia-extension id="" name="KFramwork" version="1.0.0.beta" type="codehint" force-quit="true" locked="false">
 	<products>
 		<product name="Dreamweaver" version="4" primary="true" />
 	</products>
+	<update method="directlink" url="https://github.com/MyChannel-Apps/Extensions/blob/master/Adobe%20Dreamweaver/update-info.xml?raw=true" />
 	<download>https://github.com/MyChannel-Apps/Extensions/blob/master/Adobe%20Dreamweaver/KFramework.zxp?raw=true</download>
-	<author name="Adrian Preuß, MyChannel-Apps.de" />
+	<author name="Adrian Preuss, MyChannel-Apps.de" />
 	<license-agreement><![CDATA[The MIT License (MIT)
 
 Copyright (c) 2015 MyChannel Apps
