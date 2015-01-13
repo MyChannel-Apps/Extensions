@@ -6,19 +6,19 @@
 		
 		<!-- App -->
 		<function pattern="App" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="App" />
-		<menu pattern="App" classpattern="App" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
-			<method pattern="mayJoinChannel(user)" static="false" retType="ChannelJoinPermission" object="ChannelJoinPermission" icon="Shared/MM/Images/type_void.gif">
+		<menu pattern="App" classpattern="App" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript" alias="this">
+			<method pattern="mayJoinChannel(user)" static="true" retType="ChannelJoinPermission" object="ChannelJoinPermission" icon="Shared/MM/Images/type_void.gif">
 				<parammenu pattern="(" name="user" index="0">
 					<parammenuitem label="user" value="user" datatype="User" icon="Shared/MM/Images/hintClass.gif" />
 				</parammenu>
 			</method>
-			<method pattern="maySendPublicMessage(publicMessage)" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.gif">
+			<method pattern="maySendPublicMessage(publicMessage)" static="true" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.gif">
 				<parammenu pattern="(" name="publicMessage" index="0">
 					<parammenuitem label="publicMessage" value="publicMessage" datatype="PublicMessage" icon="Shared/MM/Images/hintClass.gif" />
 				</parammenu>
 			</method>
-			<method pattern="onAppStart()" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.png" />
-			<method pattern="onKnuddelReceived(sender, receiver, knuddelAmount)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
+			<method pattern="onAppStart()" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.png" />
+			<method pattern="onKnuddelReceived(sender, receiver, knuddelAmount)" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
 				<parammenu pattern="(" name="sender" index="0">
 					<parammenuitem label="sender" value="sender" datatype="User" icon="Shared/MM/Images/hintClass.gif" />
 				</parammenu>
@@ -29,33 +29,33 @@
 					<parammenuitem label="knuddelAmount" value="knuddelAmount" datatype="KnuddelAmount" icon="Shared/MM/Images/hintClass.gif" />
 				</parammenu>
 			</method>
-			<method pattern="onPrepareShutdown(secondsTillShutdown)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
+			<method pattern="onPrepareShutdown(secondsTillShutdown)" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
 				<parammenu pattern="(" name="secondsTillShutdown" index="0">
 					<parammenuitem label="secondsTillShutdown" value="secondsTillShutdown" datatype="number" icon="Shared/MM/Images/type_number.gif" />
 				</parammenu>
 			</method>
-			<method pattern="onPrivateMessage(privateMessage)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
+			<method pattern="onPrivateMessage(privateMessage)" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
 				<parammenu pattern="(" name="privateMessage" index="0">
 					<parammenuitem label="privateMessage" value="privateMessage" datatype="PrivateMessage" icon="Shared/MM/Images/hintClass.gif" />
 				</parammenu>
 			</method>
-			<method pattern="onPublicMessage(publicMessage)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
+			<method pattern="onPublicMessage(publicMessage)" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
 				<parammenu pattern="(" name="publicMessage" index="0">
 					<parammenuitem label="publicMessage" value="publicMessage" datatype="PublicMessage" icon="Shared/MM/Images/hintClass.gif" />
 				</parammenu>
 			</method>
-			<method pattern="onShutdown()" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.png" />
-			<method pattern="onUserDiced(diceEvent)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
+			<method pattern="onShutdown()" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.png" />
+			<method pattern="onUserDiced(diceEvent)" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
 				<parammenu pattern="(" name="diceEvent" index="0">
 					<parammenuitem label="diceEvent" value="diceEvent" datatype="DiceEvent" icon="Shared/MM/Images/hintClass.gif" />
 				</parammenu>
 			</method>
-			<method pattern="onUserJoined(user)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
+			<method pattern="onUserJoined(user)" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
 				<parammenu pattern="(" name="user" index="0">
 					<parammenuitem label="user" value="user" datatype="User" icon="Shared/MM/Images/hintClass.gif" />
 				</parammenu>
 			</method>
-			<method pattern="onUserLeft(user)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
+			<method pattern="onUserLeft(user)" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.gif">
 				<parammenu pattern="(" name="user" index="0">
 					<parammenuitem label="user" value="user" datatype="User" icon="Shared/MM/Images/hintClass.gif" />
 				</parammenu>
@@ -316,9 +316,9 @@
 		<!-- Gender -->
 		<function pattern="Gender" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="Gender" />
 		<menu pattern="Gender" classpattern="Gender" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
-			<property label="Female" icon="shared/mm/images/hintProperty.png" propType="Gender" />
-			<property label="Male" icon="shared/mm/images/hintProperty.png" propType="Gender" />
-			<property label="Unknown" icon="shared/mm/images/hintProperty.png" propType="Gender" />			
+			<method pattern="Female" static="true" icon="shared/mm/images/hintProperty.png" propType="Gender" object="String" />
+			<method pattern="Male" static="true" icon="shared/mm/images/hintProperty.png" propType="Gender" object="String" />
+			<method pattern="Unknown" static="true" icon="shared/mm/images/hintProperty.png" propType="Gender" object="String" />			
 		</menu>
 				
 		<!-- KnuddelAmount -->
@@ -588,22 +588,21 @@
 		<!-- UserStatus -->
 		<function pattern="UserStatus" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="UserStatus" />
 		<menu pattern="UserStatus" classpattern="UserStatus" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
-			<property label="Admin" icon="shared/mm/images/hintProperty.png" propType="UserStatus" />
-			<property label="Family" icon="shared/mm/images/hintProperty.png" propType="UserStatus" />
-			<property label="HonoryMember" icon="shared/mm/images/hintProperty.png" propType="UserStatus" />
-			<property label="Newbie" icon="shared/mm/images/hintProperty.png" propType="UserStatus" />
-			<property label="Stammi" icon="shared/mm/images/hintProperty.png" propType="UserStatus" />
-			<property label="Sysadmin" icon="shared/mm/images/hintProperty.png" propType="UserStatus" />
-			<property label="SystemBot" icon="shared/mm/images/hintProperty.png" propType="UserStatus" />
+			<method pattern="Admin" icon="shared/mm/images/hintProperty.png" propType="UserStatus" object="String" static="true" />
+			<method pattern="Family" icon="shared/mm/images/hintProperty.png" propType="UserStatus" object="String" static="true" />
+			<method pattern="HonoryMember" icon="shared/mm/images/hintProperty.png" propType="UserStatus" object="String" static="true" />
+			<method pattern="Newbie" icon="shared/mm/images/hintProperty.png" propType="UserStatus" object="String" static="true" />
+			<method pattern="Stammi" icon="shared/mm/images/hintProperty.png" propType="UserStatus" object="String" static="true" />
+			<method pattern="Sysadmin" icon="shared/mm/images/hintProperty.png" propType="UserStatus" object="String" static="true" />
+			<method pattern="SystemBot" icon="shared/mm/images/hintProperty.png" propType="UserStatus" object="String" static="true" />
 		</menu>
 		
 		<!-- UserType -->
 		<function pattern="UserType" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="UserType" />
 		<menu pattern="UserType" classpattern="UserType" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
-			<property label="AppBot" icon="shared/mm/images/hintProperty.png" propType="UserType" />
-			<property label="Human" icon="shared/mm/images/hintProperty.png" propType="UserType" />
-			<property label="SystemBot" icon="shared/mm/images/hintProperty.png" propType="UserType" />			
+			<method pattern="AppBot" icon="shared/mm/images/hintProperty.png" propType="UserType" object="String" static="true" />
+			<method pattern="Human" icon="shared/mm/images/hintProperty.png" propType="UserType" object="String" static="true" />
+			<method pattern="SystemBot" icon="shared/mm/images/hintProperty.png" propType="UserType" object="String" static="true" />			
 		</menu>
-		
 	</menugroup>
 </codehints>
