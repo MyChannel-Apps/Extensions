@@ -4,59 +4,99 @@
 			<![CDATA[TESTDESCRIPTION KFRAMEWORK]]> 
 		</description>
 		
-		<!-- App -->
-		<function pattern="App" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="App" />
-		<menu pattern="App" classpattern="App" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
-			<method pattern="mayJoinChannel" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
-			<method pattern="maySendPublicMessage" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
-			<method pattern="onAppStart" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
-			<method pattern="onKnuddelReceived" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
-			<method pattern="onPrepareShutdown" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
-			<method pattern="onPrivateMessage" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
-			<method pattern="onPublicMessage" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
-			<method pattern="onShutdown" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
-			<method pattern="onUserDiced" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
-			<method pattern="onUserJoined" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
-			<method pattern="onUserLeft" static="false" object="App" icon="Shared/MM/Images/hintFunction.png" />
+		<!-- KFramework -->
+		<function pattern="KFramework" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="KFramework" />
+		<menu pattern="KFramework" classpattern="KFramework" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
+			<method pattern="startUp()" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.png" />
+			<method pattern="store()" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.png"/>
+			<method pattern="shutDown()" static="true" retType="void" object="void" icon="Shared/MM/Images/type_void.png"/>
 		</menu>
-	
-		<!-- KnuddelsServer -->
-		<function pattern="KnuddelsServer" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="KnuddelsServer" />
-		<menu pattern="KnuddelsServer" classpattern="KnuddelsServer" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
-			<method pattern="canAccessUser(userId)" retType="Boolean" static="true" object="Boolean" icon="Shared/MM/Images/type_bool.gif">
-				<parammenu pattern="(" name="userId" index="0">
-					<parammenuitem label="userId" value="0" datatype="number" icon="Shared/MM/Images/type_int.gif" />
+		
+		<!-- Bot -->
+		<function pattern="Bot" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="Bot" />
+		<menu pattern="Bot" classpattern="Bot" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
+			<method pattern="getAge()" static="true" retType="Number" object="Number" icon="Shared/MM/Images/type_number.png" />
+			<method pattern="getGender()" static="true" retType="Gender" object="Gender" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getKnuddelAmount()" static="true" retType="KnuddelAmount" object="KnuddelAmount" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getNick()" static="true" retType="String" object="String" icon="Shared/MM/Images/type_string.png" />
+			<method pattern="getOnlineMinutes()" static="true" retType="Number" object="Number" icon="Shared/MM/Images/type_number.png" />
+			<method pattern="getPersistence()" static="true" retType="UserPersistence" object="UserPersistence" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getProfileLink([defaultValue])" retType="String" static="true" object="String" icon="Shared/MM/Images/type_string.gif">
+				<parammenu pattern="(" name="defaultValue" index="0">
+					<parammenuitem label="defaultValue" value="defaultValue" datatype="string" icon="Shared/MM/Images/type_string.gif" />
 				</parammenu>
 			</method>
-			<method pattern="getAppDeveloper()" static="true" retType="User" object="User" icon="Shared/MM/Images/hintClass.png" />
-			<method pattern="getAppVersion()" static="true" retType="Number" object="Number" icon="Shared/MM/Images/type_int.png" />
-			<method pattern="getChannel()" retType="Channel" static="true" object="Channel" icon="Shared/MM/Images/hintClass.png" />
-			<method pattern="getDefaultBotUser()" static="true" retType="BotUser" object="BotUser" icon="Shared/MM/Images/hintClass.png" />
-			<method pattern="getDefaultLogger()" static="true" retType="KLogger" object="KLogger" icon="Shared/MM/Images/hintClass.png" />
-			<method pattern="getFullImagePath(imageName)" static="true" retType="String" object="String" icon="Shared/MM/Images/type_string.gif" />
-			<method pattern="getFullSystemImagePath(imageName)" static="true" retType="String" object="String" icon="Shared/MM/Images/type_string.gif" />
-			<method pattern="getNickCorrectCase(userId)" retType="String" static="true" object="String" icon="Shared/MM/Images/type_string.gif">
-				<parammenu pattern="(" name="userId" index="0">
-					<parammenuitem label="userId" value="0" datatype="number" icon="Shared/MM/Images/type_int.gif" />
+			<method pattern="getReadme()" static="true" retType="String" object="String" icon="Shared/MM/Images/type_string.png" />
+			<method pattern="getRegDate()" static="true" retType="Date" object="Date" icon="Shared/MM/Images/type_date.png" />
+			<method pattern="getUserId()" static="true" retType="Number" object="Number" icon="Shared/MM/Images/type_number.png" />
+			<method pattern="getUserStatus()" static="true" retType="UserStatus" object="UserStatus" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getUserType()" static="true" retType="UserType" object="UserType" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="isAway()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isAppDeveloper()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isChannelModerator()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isChannelOwner()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isEventModerator()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isOnline()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isOnlineInChannel()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="getKnuddels()" static="true" retType="Number" object="Number" icon="Shared/MM/Images/type_number.png" />
+			<method pattern="post(receivingUser, topic, text)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.png">
+				<parammenu pattern="(" name="receivingUser" index="0">
+					<parammenuitem label="receivingUser" value="receivingUser" datatype="User" icon="Shared/MM/Images/hintClass.png" />
+				</parammenu>
+				<parammenu pattern="," name="topic" index="1">
+					<parammenuitem label="topic" value="topic" datatype="string" icon="Shared/MM/Images/type_string.gif" />
+				</parammenu>
+				<parammenu pattern="," name="text" index="2">
+					<parammenuitem label="text" value="text" datatype="string" icon="Shared/MM/Images/type_string.gif" />
 				</parammenu>
 			</method>
-			<method pattern="getPersistence()" static="true" retType="AppPersistence" object="AppPersistence" icon="Shared/MM/Images/hintClass.png" />
-			<method pattern="getUser(userId)" retType="User" static="true" object="User" icon="Shared/MM/Images/hintClass.gif">
-				<parammenu pattern="(" name="userId" index="0">
-					<parammenuitem label="userId" value="0" datatype="number" icon="Shared/MM/Images/type_int.gif" />
+			<method pattern="private(message, users)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.png">
+				<parammenu pattern="(" name="message" index="0">
+					<parammenuitem label="message" value="message" datatype="String" icon="Shared/MM/Images/type_string.gif" />
+				</parammenu>
+				<parammenu pattern="," name="users" index="1">
+					<parammenuitem label="users" value="users" datatype="User" icon="Shared/MM/Images/hintClass.png" />
 				</parammenu>
 			</method>
-			<method pattern="getUserId(nick)" retType="Integer" static="true" object="Integer" icon="Shared/MM/Images/type_int.gif">
-				<parammenu pattern="(" name="nick" index="0">
-					<parammenuitem label="nick" value="0" datatype="string" icon="Shared/MM/Images/type_string.gif" />
+			<method pattern="public(message)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.png">
+				<parammenu pattern="(" name="message" index="0">
+					<parammenuitem label="message" value="message" datatype="String" icon="Shared/MM/Images/type_string.gif" />
 				</parammenu>
 			</method>
-			<method pattern="refreshHooks()" static="true" retType="void" object="void" icon="Shared/MM/Images/hintFunction.png" />
-			<method pattern="userExists(nick)" retType="Boolean" static="true" object="Boolean" icon="Shared/MM/Images/type_bool.gif">
-				<parammenu pattern="(" name="nick" index="0">
-					<parammenuitem label="nick" value="0" datatype="string" icon="Shared/MM/Images/type_string.gif" />
+			<method pattern="exception(exception)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.png">
+				<parammenu pattern="(" name="exception" index="0">
+					<parammenuitem label="exception" value="exception" datatype="String" icon="Shared/MM/Images/type_string.gif" />
 				</parammenu>
-			</method>
+			</method>			
+			<method pattern="exec(command)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.png">
+				<parammenu pattern="(" name="command" index="0">
+					<parammenuitem label="command" value="command" datatype="String" icon="Shared/MM/Images/type_string.gif" />
+				</parammenu>
+			</method>	
+			<method pattern="knuddel(user, amount [,message])" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.png">
+				<parammenu pattern="(" name="user" index="0">
+					<parammenuitem label="user" value="user" datatype="User" icon="Shared/MM/Images/hintClass.png" />
+				</parammenu>
+				<parammenu pattern="," name="amount" index="1">
+					<parammenuitem label="amount" value="amount" datatype="KnuddelAmount" icon="Shared/MM/Images/hintClass.gif" />
+				</parammenu>
+				<parammenu pattern="," name="message" index="2">
+					<parammenuitem label="message" value="message" datatype="String" icon="Shared/MM/Images/type_string.gif" />
+				</parammenu>
+			</method>					
 		</menu>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	</menugroup>
 </codehints>

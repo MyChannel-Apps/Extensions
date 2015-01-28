@@ -65,6 +65,14 @@
 		<!-- AppPersistence -->
 		<function pattern="AppPersistence" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="AppPersistence" />
 		<menu pattern="AppPersistence" classpattern="AppPersistence" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
+			<method pattern="addNumber(key, value)" retType="Number" static="false" object="number" icon="Shared/MM/Images/type_number.gif">
+				<parammenu pattern="(" name="key" index="0">
+					<parammenuitem label="key" value="key" datatype="string" icon="Shared/MM/Images/type_string.gif" />
+				</parammenu>
+				<parammenu pattern="," name="value" index="1">
+					<parammenuitem label="value" value="value" datatype="Number" icon="Shared/MM/Images/type_number.gif" />
+				</parammenu>
+			</method>
 			<method pattern="deleteNumber(key)" retType="void" static="false" object="void" icon="Shared/MM/Images/type_void.gif">
 				<parammenu pattern="(" name="key" index="0">
 					<parammenuitem label="key" value="key" datatype="string" icon="Shared/MM/Images/type_string.gif" />
@@ -173,7 +181,10 @@
 			<method pattern="isAway()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isChannelModerator()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isChannelOwner()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isColorMuted()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isEventModerator()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isLocked()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isMuted()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isOnline()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isOnlineInChannel()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="joinChannel()" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.png" />
@@ -225,6 +236,7 @@
 		<menu pattern="Channel" classpattern="Channel" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
 			<method pattern="getChannelConfiguration()" static="false" retType="ChannelConfiguration" object="ChannelConfiguration" icon="Shared/MM/Images/hintClass.png" />
 			<method pattern="getChannelName()" static="false" retType="String" object="String" icon="Shared/MM/Images/type_string.png" />
+			<method pattern="getChannelRestrictions()" static="false" retType="ChannelRestrictions" object="ChannelRestrictions" icon="Shared/MM/Images/hintClass.png" />
 			<method pattern="getOnlineUsers(userType [,...])" static="false" retType="User" object="User" icon="Shared/MM/Images/hintClass.png">
 				<parammenu pattern="(" name="userType" index="0">
 					<parammenuitem label="userType" value="userType" datatype="User" icon="Shared/MM/Images/hintClass.png" />
@@ -249,12 +261,20 @@
 			</method>
 		</menu>
 		
+		<!-- ChannelRestrictions -->
+		<function pattern="ChannelRestrictions" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="ChannelRestrictions" />
+		<menu pattern="ChannelRestrictions" classpattern="ChannelRestrictions" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
+			<method pattern="getColorMutedUsers()" static="false" retType="User[]" object="User" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getLockedUsers()" static="false" retType="User[]" object="User" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getMutedUsers()" static="false" retType="User[]" object="User" icon="Shared/MM/Images/hintClass.png" />
+		</menu>
+		
 		<!-- ChannelRights -->
 		<function pattern="ChannelRights" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="ChannelRights" />
 		<menu pattern="ChannelRights" classpattern="ChannelRights" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
-			<method pattern="getChannelModerators()" static="false" retType="User" object="User" icon="Shared/MM/Images/hintClass.png" />
-			<method pattern="getChannelOwners()" static="false" retType="User" object="User" icon="Shared/MM/Images/hintClass.png" />
-			<method pattern="getEventModerators()" static="false" retType="User" object="User" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getChannelModerators()" static="false" retType="User[]" object="User" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getChannelOwners()" static="false" retType="User[]" object="User" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getEventModerators()" static="false" retType="User[]" object="User" icon="Shared/MM/Images/hintClass.png" />
 		</menu>
 		
 		<!-- Dice -->
@@ -484,7 +504,10 @@
 			<method pattern="isAway()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isChannelModerator()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isChannelOwner()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isColorMuted()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isEventModerator()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isLocked()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isMuted()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isOnline()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isOnlineInChannel()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="sendPostMessage(topic, text)" static="false" retType="void" object="void" icon="Shared/MM/Images/type_void.png">
@@ -505,6 +528,14 @@
 		<!-- UserPersistence -->
 		<function pattern="UserPersistence" casesensitive="true" displayrestriction="JavaScript" icon="Shared/MM/Images/hintClass.png" retType="UserPersistence" />
 		<menu pattern="UserPersistence" classpattern="UserPersistence" casesensitive="true" additionaldismisschars=";" displayrestriction="JavaScript">
+			<method pattern="addNumber(key, value)" retType="Number" static="false" object="number" icon="Shared/MM/Images/type_number.gif">
+				<parammenu pattern="(" name="key" index="0">
+					<parammenuitem label="key" value="key" datatype="string" icon="Shared/MM/Images/type_string.gif" />
+				</parammenu>
+				<parammenu pattern="," name="value" index="1">
+					<parammenuitem label="value" value="value" datatype="Number" icon="Shared/MM/Images/type_number.gif" />
+				</parammenu>
+			</method>
 			<method pattern="deleteNumber(key)" retType="void" static="false" object="void" icon="Shared/MM/Images/type_void.gif">
 				<parammenu pattern="(" name="key" index="0">
 					<parammenuitem label="key" value="key" datatype="string" icon="Shared/MM/Images/type_string.gif" />
