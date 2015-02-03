@@ -178,6 +178,7 @@
 			<method pattern="getUserStatus()" static="false" retType="UserStatus" object="UserStatus" icon="Shared/MM/Images/hintClass.png" />
 			<method pattern="getUserType()" static="false" retType="UserType" object="UserType" icon="Shared/MM/Images/hintClass.png" />
 			<method pattern="isAppDeveloper()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isAppManager()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isAway()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isChannelModerator()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isChannelOwner()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
@@ -378,6 +379,7 @@
 					<parammenuitem label="nick" value="nick" datatype="string" icon="Shared/MM/Images/type_string.gif" />
 				</parammenu>
 			</method>
+			<method pattern="isTestSystem()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="refreshHooks()" static="true" retType="void" object="void" icon="Shared/MM/Images/hintFunction.png" />
 			<method pattern="userExists(nick)" retType="Boolean" static="true" object="Boolean" icon="Shared/MM/Images/type_bool.gif">
 				<parammenu pattern="(" name="nick" index="0">
@@ -501,6 +503,7 @@
 			<method pattern="getUserStatus()" static="false" retType="UserStatus" object="UserStatus" icon="Shared/MM/Images/hintClass.png" />
 			<method pattern="getUserType()" static="false" retType="UserType" object="UserType" icon="Shared/MM/Images/hintClass.png" />
 			<method pattern="isAppDeveloper()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
+			<method pattern="isAppManager()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isAway()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isChannelModerator()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isChannelOwner()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
