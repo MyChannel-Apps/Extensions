@@ -294,6 +294,7 @@
 				</parammenu>
 			</method>
 			<method pattern="getDices()" static="false" retType="Dice[]" object="Dice[]" icon="Shared/MM/Images/type_array.png" />
+			<method pattern="isUsingPrivateThrow()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 			<method pattern="isUsingOpenThrow()" static="false" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png" />
 		</menu>
 		
@@ -312,6 +313,11 @@
 				</parammenu>
 			</method>
 			<method pattern="getDiceConfiguration()" static="true" retType="DiceConfiguration" object="DiceConfiguration" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="setShouldUsePrivateThrow(shouldUsePrivateThrow)" static="true" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png">
+				<parammenu pattern="(" name="shouldUsePrivateThrow" index="0">
+					<parammenuitem label="shouldUsePrivateThrow" value="shouldUsePrivateThrow" datatype="boolean" icon="Shared/MM/Images/type_bool.png" />
+				</parammenu>
+			</method>
 			<method pattern="setUseOpenThrows(shouldUseOpenThrow)" static="true" retType="Boolean" object="Boolean" icon="Shared/MM/Images/type_bool.png">
 				<parammenu pattern="(" name="shouldUseOpenThrow" index="0">
 					<parammenuitem label="shouldUseOpenThrow" value="shouldUseOpenThrow" datatype="boolean" icon="Shared/MM/Images/type_bool.png" />
@@ -357,6 +363,9 @@
 				</parammenu>
 			</method>
 			<method pattern="getAppDeveloper()" static="true" retType="User" object="User" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getAppId()" retType="String" object="String" icon="Shared/MM/Images/type_string.png" />
+			<method pattern="getAppManagers()" static="true" retType="User[]" object="User[]" icon="Shared/MM/Images/hintClass.png" />
+			<method pattern="getAppName()" static="true" retType="String" object="String" icon="Shared/MM/Images/type_string.png" />
 			<method pattern="getAppVersion()" static="true" retType="Number" object="Number" icon="Shared/MM/Images/type_int.png" />
 			<method pattern="getChannel()" retType="Channel" static="true" object="Channel" icon="Shared/MM/Images/hintClass.png" />
 			<method pattern="getDefaultBotUser()" static="true" retType="BotUser" icon="Shared/MM/Images/hintClass.png" />
