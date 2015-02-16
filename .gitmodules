@@ -1,0 +1,3 @@
+[submodule "eclipse/framework"]
+	path = eclipse/framework
+	url = https://github.com/MyChannel-Apps/KFramework.git
