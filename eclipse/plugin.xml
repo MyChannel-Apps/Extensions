@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-	<!-- Autocomplete -->
-	<extension-point id="javaScriptCompleter" name="javaScriptCompleter" schema="schema/javaScriptCompleter.exsd" />
-   
 	<!-- Wizards -->
 	<extension point="org.eclipse.ui.newWizards">
-		<category name="Knuddels" id="de.mca.extensions.eclipse"></category>
-		<wizard category="de.mca.extensions.eclipse" class="de.mca.extensions.eclipse.wizards.KnuddelsWizard" icon="icons/knuddels.png" id="de.mca.extensions.eclipse.wizards.Knuddels" name="App" project="true"></wizard>
-		<wizard category="de.mca.extensions.eclipse" class="de.mca.extensions.eclipse.wizards.KFrameworkWizard"  icon="icons/kframework.png" id="de.mca.extensions.eclipse.wizards.KFramework" name="App (KFramework)" project="true"></wizard>
+		<category name="Knuddels" id="de.mca.extensions.eclipse" />
+		<wizard category="de.mca.extensions.eclipse" class="de.mca.extensions.eclipse.wizards.KnuddelsWizard" icon="icons/knuddels.png" id="de.mca.extensions.eclipse.wizards.Knuddels" name="App" project="true" />
+		<wizard category="de.mca.extensions.eclipse" class="de.mca.extensions.eclipse.wizards.KFrameworkWizard"  icon="icons/kframework.png" id="de.mca.extensions.eclipse.wizards.KFramework" name="App (KFramework)" project="true" />
 	</extension>
 
 	<!-- Extensions -->
@@ -18,25 +15,80 @@
 	</extension>
 
 	<extension point="org.eclipse.core.contenttype.contentTypes">
-		<content-type base-type="org.eclipse.core.runtime.text" file-extensions="js" id="de.mca.extensions.eclipse.types.JavaScript" default-charset="UTF-8" name="JavaScript File" priority="high">
-			<describer class="org.eclipse.core.runtime.content.XMLRootElementContentDescriber">
-				<parameter name="element" value="apples"></parameter>
-			</describer>
-		</content-type>
-		<content-type base-type="org.eclipse.core.runtime.text" file-extensions="config" id="de.mca.extensions.eclipse.types.Configuration" default-charset="UTF-8" name="Configuration File" priority="high">
-			<describer class="org.eclipse.core.runtime.content.XMLRootElementContentDescriber">
-				<parameter name="element" value="apples"></parameter>
-			</describer>
-		</content-type>
+		<content-type base-type="org.eclipse.core.runtime.text" file-extensions="js" id="de.mca.extensions.eclipse.types.JavaScript" default-charset="UTF-8" name="JavaScript File" priority="high" />
+		<content-type base-type="org.eclipse.core.runtime.text" file-extensions="config" id="de.mca.extensions.eclipse.types.Configuration" default-charset="UTF-8" name="Configuration File" priority="high" />
 	</extension>
 	
 	<!-- Editor -->
 	<extension point="org.eclipse.ui.editors">
-		<editor name="Knuddels: Configuration Editor" icon="icons/configuration.png" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" class="de.mca.extensions.eclipse.editors.config.Configuration" id="de.mca.extensions.eclipse.editors.config.Configuration">
-			<contentTypeBinding contentTypeId="de.mca.extensions.eclipse.types.Configuration"></contentTypeBinding>
-		</editor>
-		<editor name="Knuddels: JavaScript Editor" extensions="js" icon="icons/javascript.png" class="de.mca.extensions.eclipse.editors.js.JavaScript" id="de.mca.extensions.eclipse.editors.js.JavaScript">
-		
+		<editor class="de.mca.extensions.eclipse.editors.config.Configuration" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="config" icon="icons/configuration.png" id="de.mca.extensions.eclipse.editors.config.Configuration" name="Knuddels: Configuration Editor">
+			<contentTypeBinding contentTypeId="de.mca.extensions.eclipse.types.Configuration" />
 		</editor>
 	</extension>
+	
+	<!-- Completion -->
+	<extension point="org.eclipse.wst.jsdt.ui.javaCompletionProposalComputer" id="js_knuddels" name="Knuddels API">
+		<proposalCategory />
+	</extension>
+	
+	<extension id="js_knuddels" point="org.eclipse.wst.jsdt.ui.javaCompletionProposalComputer">
+		<javaCompletionProposalComputer class="de.mca.extensions.eclipse.assists.knuddels.Completion" categoryId="de.mca.extensions.eclipse.assists.knuddels" activate="true" />
+	</extension>
+	
+	<extension point="org.eclipse.wst.jsdt.ui.javaCompletionProposalComputer" id="js_kframework" name="KFramework API">
+		<proposalCategory />
+	</extension>
+	
+	<extension id="js_kframework" point="org.eclipse.wst.jsdt.ui.javaCompletionProposalComputer">
+		<javaCompletionProposalComputer class="de.mca.extensions.eclipse.assists.kframework.Completion" categoryId="de.mca.extensions.eclipse.assists.kframework" activate="true" />
+	</extension>
+	
+	<!-- Natures -->
+	<extension id="de.mca.extensions.eclipse.natures.Knuddels" name="Knuddels" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="de.mca.extensions.eclipse.natures.Knuddels" />
+		</runtime>
+	</extension>
+	<extension id="de.mca.extensions.eclipse.natures.KFramework" name="KFramework" point="org.eclipse.core.resources.natures">
+		<runtime>
+			<run class="de.mca.extensions.eclipse.natures.KFramework" />
+		</runtime>
+	</extension>
+	
+	<!-- Menu -->
+	<extension point="org.eclipse.ui.commands">
+		<category name="MyChannel-Apps.de" id="de.mca.extensions.eclipse.category.menu" />
+		<command name="start Emulator" categoryId="de.mca.extensions.eclipse.category.menu" id="de.mca.extensions.eclipse.commands.emulator" />
+		<command name="Settings" categoryId="de.mca.extensions.eclipse.category.menu" id="de.mca.extensions.eclipse.commands.settings" />
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+		<handler commandId="de.mca.extensions.eclipse.commands.emulator" class="de.mca.extensions.eclipse.handlers.Emulator" />
+		<handler commandId="de.mca.extensions.eclipse.commands.settings" class="de.mca.extensions.eclipse.handlers.Settings" />
+	</extension>
+	<extension point="org.eclipse.ui.bindings">
+		<key commandId="de.mca.extensions.eclipse.commands.emulator" contextId="org.eclipse.ui.contexts.window" sequence="Ctrl+R" schemeId="org.eclipse.ui.defaultAcceleratorConfiguration" />
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution allPopups="false" locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+			<toolbar id="de.mca.extensions.eclipse.toolbar.knuddels" label="Toolbar Name">
+				<command commandId="de.mca.extensions.eclipse.commands.emulator" icon="icons/run.png" style="pulldown" tooltip="start the app on the emulator" id="de.mca.extensions.eclipse.toolbar.knuddels.emulator" />
+			</toolbar>
+		</menuContribution>
+		
+		<menuContribution allPopups="false" locationURI="menu:de.mca.extensions.eclipse.toolbar.knuddels.emulator">
+			<command commandId="de.mca.extensions.eclipse.commands.emulator" label="Emulator" style="push" />
+			<command commandId="de.mca.extensions.eclipse.commands.settings" label="Settings" style="push" />
+		</menuContribution>
+	</extension>
+	
+	<!-- Emulator -->
+	<extension point="org.eclipse.ui.views">
+		<category id="de.mca.extensions.eclipse.views.category" name="Knuddels" />
+		<view category="de.mca.extensions.eclipse.views.category" class="de.mca.extensions.eclipse.Console" icon="icons/run.png" id="de.mca.extensions.eclipse.Console" name="Console" />
+	</extension>
+	<extension point="org.eclipse.ui.perspectiveExtensions">
+		<perspectiveExtension targetID="*">
+			<view closeable="false" id="de.mca.extensions.eclipse.Console" ratio="0.5" relationship="stack" visible="true" />
+		</perspectiveExtension>
+	</extension>>
 </plugin>

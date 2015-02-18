@@ -1,29 +1,37 @@
 package de.mca.extensions.eclipse.wizards;
 import java.io.ByteArrayInputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map.Entry;
 import java.util.Properties;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.IProjectNature;
 import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ProjectScope;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.core.runtime.preferences.IScopeContext;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.ui.IEditorDescriptor;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.ide.IDE;
+import de.mca.extensions.eclipse.interfaces.WizardNature;
 import de.mca.extensions.eclipse.tools.StringBuilding;
 
-public class KnuddelsWizard extends org.eclipse.jface.wizard.Wizard implements INewWizard {
+public class KnuddelsWizard extends org.eclipse.jface.wizard.Wizard implements INewWizard, WizardNature {
 	protected ISelection selection;
 	protected WizardPage page;
 	private String app_name			= "";
@@ -78,12 +86,9 @@ public class KnuddelsWizard extends org.eclipse.jface.wizard.Wizard implements I
 		try {
 			getContainer().run(true, false, op);
 		} catch (InterruptedException e) {
-			//e.printStackTrace();
 			return false;
 		} catch (InvocationTargetException e) {
-			//e.printStackTrace();
-			Throwable realException = e.getTargetException();
-			MessageDialog.openError(getShell(), "Error", realException.getMessage());
+			MessageDialog.openError(getShell(), "Error", e.getTargetException().getMessage());
 			return false;
 		}
 		
@@ -103,25 +108,65 @@ public class KnuddelsWizard extends org.eclipse.jface.wizard.Wizard implements I
 			createProject(app);
 		}
 		
-		if(!monitor.isCanceled()) {
-			monitor.setTaskName("Show Project");
-			monitor.worked(1);
-		}
+		try {	
+			if(!monitor.isCanceled()) {
+				monitor.setTaskName("Show Project");
+				monitor.worked(2);
+			}
 		
-		if(!getShell().isDisposed()) {
-			getShell().getDisplay().asyncExec(new Runnable() {
-				public void run() {
-					try {
-						IDE.openEditor(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage(), app.getFile("main.js"), "main.js");
-					} catch (PartInitException e) {
-						e.printStackTrace();
+			if(!getShell().isDisposed()) {
+				getShell().getDisplay().asyncExec(new Runnable() {
+					public void run() {
+						try {
+							IWorkbench workbench	= PlatformUI.getWorkbench();
+							String file_name		= "main.js";
+							String editor_id		= "org.eclipse.ui.DefaultTextEditor";
+							IFile file				= app.getFile(file_name);
+							IEditorDescriptor desc	= workbench.getEditorRegistry().getDefaultEditor(file_name);
+							
+							if(desc != null) {
+								editor_id			= desc.getId();
+							}
+							
+							IDE.openEditor(workbench.getActiveWorkbenchWindow().getActivePage(), file, editor_id);
+						} catch (Exception e) {
+							/* Do Nothing */
+						}
 					}
-				}
-			});
+				});
+			}
+				
+			if(!monitor.isCanceled()) {
+				monitor.done();
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	public void updateProjectNature(IProject project) {
+		addNature(project, de.mca.extensions.eclipse.natures.Knuddels.NATURE_ID);
+	}
+	
+	public void addNature(IProject project, String nature_id) {
+		if(project.isOpen() == false) {
+			return;
 		}
 		
-		if(!monitor.isCanceled()) {
-			monitor.done();
+		try {
+			IProjectDescription pd	= project.getDescription();
+			IProjectNature nature	= project.getNature(nature_id);
+			
+			if(nature == null) {
+				List<String> newNatures	= new ArrayList<String>();
+			    newNatures.addAll(Arrays.asList(pd.getNatureIds()));
+			    newNatures.add(nature_id);
+			    pd.setNatureIds(newNatures.toArray(new String[newNatures.size()]));
+			    project.setDescription(pd, null);
+			}
+		} catch(Exception e) {
+			/* Do Nothing */
 		}
 	}
 	
@@ -129,6 +174,10 @@ public class KnuddelsWizard extends org.eclipse.jface.wizard.Wizard implements I
 		project.create(null);
 		project.open(null);
 		project.setDefaultCharset("UTF-8", null);
+		updateProjectNature(project);
+		IScopeContext context			= new ProjectScope(project);
+		System.err.println(context.getName() + ", " + context.getLocation());
+		/* projectPreferences.put(key, value); projectPreferences.flush();*/
 		
 		Properties config = new Properties();
 		config.setProperty("appName", app_name);

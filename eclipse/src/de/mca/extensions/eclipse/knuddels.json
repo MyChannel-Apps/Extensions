@@ -1,0 +1,2501 @@
+{
+    "version": "1.0.0",
+    "url": "http:\/\/developer.knuddels.de\/docs\/",
+    "classes": [
+        {
+            "name": "App",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/App.html",
+            "methods": []
+        },
+        {
+            "name": "AppPersistence",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/AppPersistence.html",
+            "methods": [
+                {
+                    "name": "addNumber",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Addiert den \u00fcbergebenen <code>value<\/code> auf die unter dem Key <code>key<\/code> vorhandenen Wert drauf.\n                                            Value kann auch negativ sein um eine Subtraktion durchzuf\u00fchren.\n                                            Falls keine Zahl f\u00fcr den <code>key<\/code> existiert, so wird der <code>value<\/code> f\u00fcr <code>key<\/code> gespeichert.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteNumber",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>L\u00f6scht die Zahl, die unter <code>key<\/code> gespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteObject",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>L\u00f6scht das Objekt, das unter <code>key<\/code> gespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteString",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>L\u00f6scht die Zeichenkette, die unter <code>key<\/code> gespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getNumber",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Zahl, die f\u00fcr den <code>key<\/code> gespeichert ist.\n                                            Falls f\u00fcr <code>key<\/code> keine Zahl gespeichert ist, so gibt die Methode\n                                            den <code>defaultValue<\/code> zur\u00fcck.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "defaultValue",
+                            "type": "Number",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getObject",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": "<p>Liefert das Objekt, das f\u00fcr den <code>key<\/code> gespeichert ist.\n                                            Falls f\u00fcr <code>key<\/code> kein Objekt gespeichert ist, so gibt die Methode\n                                            den <code>defaultValue<\/code> zur\u00fcck.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "defaultValue",
+                            "type": "Object",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Zeichenkette, die f\u00fcr den <code>key<\/code> gespeichert ist.\n                                            Falls f\u00fcr <code>key<\/code> keine Zeichenkette gespeichert ist, so gibt die Methode\n                                            den <code>defaultValue<\/code> zur\u00fcck.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "defaultValue",
+                            "type": "String",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "hasNumber",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob unter dem <code>key<\/code> eine Zahl abgespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "hasObject",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob unter dem <code>key<\/code> ein Objekt abgespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "hasString",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob unter dem <code>key<\/code> ein String abgespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "setNumber",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Setzt die Zahl <code>value<\/code> f\u00fcr den <code>key<\/code>.\n                                            Falls bereits eine Zahl f\u00fcr den <code>key<\/code> existiert, so wird diese \u00fcberschrieben.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "setObject",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Setzt das Objekt <code>value<\/code> f\u00fcr den <code>key<\/code>.\n                                            Falls bereits ein Objekt f\u00fcr den <code>key<\/code> existiert, so wird dieses \u00fcberschrieben.\n                                            Das als JSON serialisierte Objekt darf maximal 100kb gro\u00df sein.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "object",
+                            "type": "Object",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "setString",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Setzt die Zeichenkette <code>value<\/code> f\u00fcr den <code>key<\/code>.\n                                            Falls bereits eine Zeichenkette f\u00fcr den <code>key<\/code> existiert, so wird diese \u00fcberschrieben.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "BotUser",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/BotUser.html",
+            "methods": [
+                {
+                    "name": "equals",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Vergleicht den \u00fcbergebenen Nutzer und liefert <code>true<\/code>, falls der \u00fcbergebene Nutzer\n                                            identisch ist mit dem aktuellen Nutzer.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAge",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert das Alter des Nutzers. Bei Nutzern, die bereits sehr lange in der Plattform sind kann es vorkommen, dass kein Alter angegeben wurde. In diesem Fall ist das Alter <code>0<\/code>.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getGender",
+                    "return": "Gender",
+                    "deprecated": false,
+                    "description": "<p>Liefert das Geschlecht des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getKnuddelAmount",
+                    "return": "KnuddelAmount",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Anzahl der Knuddel, die der Nutzer besitzt.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getNick",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Nicknamen des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getOnlineMinutes",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die vom Nutzer verbrachte Zeit im gesamten Chatsystem In Minuten.\n                                            <b>Hinweis:<\/b> Die Minutenzahl wird derzeit immer nur zu dem Zeitpunkt aktualisiert,\n                                            wenn der Nutzer offline geht.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getPersistence",
+                    "return": "UserPersistence",
+                    "deprecated": false,
+                    "description": "<p>Liefert ein <code>UserPersistence<\/code>-Objekt f\u00fcr diesen Nutzer. Mit diesem Objekt kann eine <code>App<\/code> sich Dinge \u00fcber diesen speziellen Nutzer merken.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getProfileLink",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert einen Link zum Profil des Nutzers, den man im Chat anzeigen kann.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "displayText",
+                            "type": "String",
+                            "optional": true,
+                            "description": "<p>Anzeigetext, falls nicht angegeben Nickname des Nutzers<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "getReadme",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Readme des Nutzers, die er mit \/readme TEXT in sein Profil gesetzt hat.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getRegDate",
+                    "return": "Date",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Zeitpunkt der Registrierung des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getUserId",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die eindeutige Nutzerkennung des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getUserStatus",
+                    "return": "UserStatus",
+                    "deprecated": false,
+                    "description": "<p>Liefert den <code>UserStatus<\/code> des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getUserType",
+                    "return": "UserType",
+                    "deprecated": false,
+                    "description": "<p>Liefert den <code>UserType<\/code> des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isAppDeveloper",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzers der Entwickler der <code>App<\/code> ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isAppManager",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Information, ob dieser Nutzer ein AppManager f\u00fcr diese <code>App<\/code> ist. Die Channelbesitzer z\u00e4hlen automatisch auch als AppManager.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isAway",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Information, ob der Nutzer sich mittels \/away-Funktion kurz abgemeldet hat.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isChannelModerator",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzer Channelmoderator im <code>Channel<\/code> der <code>App<\/code> ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isChannelOwner",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Information, ob dieser Nutzer Channelbesitzer im <code>Channel<\/code> der <code>App<\/code> ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isColorMuted",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzer beim Schreiben \u00f6ffentlicher Nachrichten im <code>Channel<\/code> derzeit f\u00fcr die Verwendung von Textformatierungen und Farben gesperrt ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isEventModerator",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzer Eventmoderator im <code>Channel<\/code> der <code>App<\/code> ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isLocked",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzer derzeit f\u00fcr das Betreten des <code>Channel<\/code> gesperrt ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isMuted",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzer derzeit f\u00fcr das Schreiben \u00f6ffentlicher Nachrichten im <code>Channel<\/code> gesperrt ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isOnline",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Information, ob der Nutzer irgendwo im Chat online ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isOnlineInChannel",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Information, ob der Nutzer online im <code>Channel<\/code> der <code>App<\/code> ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "joinChannel",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p><b style=\"color:red;\">Bisher nicht implementiert!<\/b><br \/>\n                                            L\u00e4sst den BotUser im <code>Channel<\/code> Channel online gehen.\n                                            Dieser ist dann sichtbar in der Nickliste.\n                                            Standardm\u00e4\u00dfig ist der DefaultBotUser im Channel online.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "leaveChannel",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p><b style=\"color:red;\">Bisher nicht implementiert!<\/b><br \/>\n                                            L\u00e4sst den BotUser im <code>Channel<\/code> Channel offline gehen.\n                                            Dieser ist dann nicht mehr sichtbar in der Nickliste.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "sendPostMessage",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Sendet eine persistente Nachricht ein einen bestimmten Nutzer.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "receivingUser",
+                            "type": "User",
+                            "optional": false,
+                            "description": "<p>Nutzer, der die Nachricht erhalten soll.<\/p>"
+                        },
+                        {
+                            "name": "topic",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Betreff der Nachricht.<\/p>"
+                        },
+                        {
+                            "name": "text",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Nachricht, die gesendet werden soll.<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "sendPrivateMessage",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Sendet eine private Nachricht an bestimmte Nutzer.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Nachricht, die gesendet werden soll.<\/p>"
+                        },
+                        {
+                            "name": "users",
+                            "type": "User[]",
+                            "optional": false,
+                            "description": "<p>Nutzer, die die Nachricht erhalten sollen.<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "sendPublicMessage",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Sendet eine \u00f6ffentliche Nachricht in den <code>Channel<\/code>.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Nachricht, die angezeigt werden soll.<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "sendToChannel",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p><b style=\"color:red;\">Bisher nicht implementiert!<\/b><br \/>\n                                            Erm\u00f6glicht den Aufruf von \/-Kommandos durch den BotUser.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "command",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "transferKnuddel",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Transferiert eine bestimmte Anzahl Knuddel an einen Zielnutzer.\n                                            <b style=\"color:red;\">Wichtiger Hinweis:<\/b> Sollte die App versuchen mehr Knuddel zu transferieren,\n                                            als sie besitzt, so f\u00e4hrt die App herunter und kann nicht mehr vom Entwickler gestartet werden.\n                                            <br \/>Es k\u00f6nnen nur Knuddel transferiert werden zu Nutzern mit <code>UserType.Human<\/code>.\n                                            Diese Transaktionen werden nicht versteuert.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "receivingUser",
+                            "type": "User",
+                            "optional": false,
+                            "description": "<p>Nutzer, der die Knuddel erhalten soll.<\/p>"
+                        },
+                        {
+                            "name": "knuddelAmount",
+                            "type": "KnuddelAmount",
+                            "optional": false,
+                            "description": "<p>Anzahl der Knuddel. Muss mindestens 0.01 sein. Bei ung\u00fcltigen Werten wird ein Fehler geworfen.<\/p>"
+                        },
+                        {
+                            "name": "displayReasonText",
+                            "type": "String",
+                            "optional": true,
+                            "description": "<p>Grund f\u00fcr den Transfer.<\/p>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Channel",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/Channel.html",
+            "methods": [
+                {
+                    "name": "getChannelConfiguration",
+                    "return": "ChannelConfiguration",
+                    "deprecated": false,
+                    "description": "<p>Gibt Zugriff auf das <code>ChannelConfiguration<\/code>-Objekt des Channels.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getChannelName",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Namen des Channels.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getChannelRestrictions",
+                    "return": "ChannelRestrictions",
+                    "deprecated": false,
+                    "description": "<p>Gibt Zugriff auf das <code>ChannelRestrictions<\/code>-Objekt des Channels.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getOnlineUsers",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": "<p>Gibt Zugriff auf Nutzer, die gerade im Channel online sind.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "userType, ...",
+                            "type": "UserType[]",
+                            "optional": true,
+                            "description": "<p>Liste von UserType nach denen gefiltert werden soll.<\/p>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ChannelConfiguration",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/ChannelConfiguration.html",
+            "methods": [
+                {
+                    "name": "getChannelRights",
+                    "return": "ChannelRights",
+                    "deprecated": false,
+                    "description": "<p>Liefert das <code>ChannelRights<\/code>-Objekt des Channels.<\/p>",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "ChannelJoinPermission",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/ChannelJoinPermission.html",
+            "methods": [
+                {
+                    "name": "accepted",
+                    "return": "ChannelJoinPermission",
+                    "deprecated": false,
+                    "description": "<p>Erzeugt ein <code>ChannelJoinPermission<\/code>-Objekt, das den Zugriff in den Channel erlaubt.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "denied",
+                    "return": "ChannelJoinPermission",
+                    "deprecated": false,
+                    "description": "<p>Erzeugt ein <code>ChannelJoinPermission<\/code>-Objekt, das den Zugriff in den Channel verbietet.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "denyReason",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Grund, der dem Nutzer als Ablehngrund angezeigt wird.<\/p>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ChannelRestrictions",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/ChannelRestrictions.html",
+            "methods": [
+                {
+                    "name": "getColorMutedUsers",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert alle <code>User<\/code> die im <code>Channel<\/code> derzeit f\u00fcr das Nutzen von Farben und Textformatierung in \u00f6ffentlichen Nachrichten gesperrt sind.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getLockedUsers",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert alle <code>User<\/code> die f\u00fcr das Betreten des <code>Channel<\/code> derzeit gesperrt sind.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getMutedUsers",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert alle <code>User<\/code> die im <code>Channel<\/code> derzeit f\u00fcr das Schreiben \u00f6ffentlicher Nachrichten gesperrt sind.<\/p>",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "ChannelRights",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/ChannelRights.html",
+            "methods": [
+                {
+                    "name": "getChannelModerators",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Liste aller Channel-Moderatoren.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getChannelOwners",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Liste aller Channelbesitzer. In \u00f6ffentlichen Channels sind dies alle hauptzust\u00e4ndigen betreuenden Mitglieder. (HZA\/HZE)<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getEventModerators",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Liste aller Event-Moderatoren.<\/p>",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Dice",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/Dice.html",
+            "methods": [
+                {
+                    "name": "getAmount",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Anzahl der W\u00fcrfel.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getNumerOfSides",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Anzahl der Seiten der W\u00fcrfel.<\/p>",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "DiceConfiguration",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/DiceConfiguration.html",
+            "methods": [
+                {
+                    "name": "equals",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Vergleicht, ob zwei Konfigurationen inhaltlich identisch sind<\/p>",
+                    "parameters": [
+                        {
+                            "name": "diceConfiguration",
+                            "type": "DiceConfiguration",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getDices",
+                    "return": "Dice[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert ein Array mit W\u00fcrfeln, mit denen gew\u00fcrfelt wurde.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isUsingOpenThrow",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert, ob es sich um einen offenen W\u00fcrfelwurf handelt.\n                                            Offene W\u00fcrfelw\u00fcrfe sind speziell. Falls die Augenzahl des W\u00fcrfels die Maximalsumme zeigt,\n                                            so wird noch einmal gew\u00fcrfelt und die neue Zahl dazu addiert, solange bis der W\u00fcrfel\n                                            nicht mehr die Maximalsumme zeigt.<\/p>\n                                            <p><b>Beispiel:<\/b> \/diceo 1w4 -> 4 -> 4 -> 3 = 11<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isUsingPrivateThrow",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob die W\u00fcrfel privat geworfen worden sind.<\/p>",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "DiceConfigurationFactory",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/DiceConfigurationFactory.html",
+            "methods": [
+                {
+                    "name": "addDice",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>F\u00fcgt der Konfiguration einen W\u00fcrfel hinzu.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "dice",
+                            "type": "Dice",
+                            "optional": false,
+                            "description": "<p>W\u00fcrfel, der hinzugef\u00fcgt werden soll.<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "computeCurrentDiceCount",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Anzahl der W\u00fcrfel, die zur Konfiguration geh\u00f6ren.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "fromString",
+                    "return": "DiceConfiguration",
+                    "deprecated": false,
+                    "description": "<p>Erzeugt eine W\u00fcrfelkonfiguration.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "diceConfigurationString",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Zeichenkette, wie sie zum normalen W\u00fcrfeln im Chat benutzt wird.<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "getDiceConfiguration",
+                    "return": "DiceConfiguration",
+                    "deprecated": false,
+                    "description": "<p>Liefert die erzeugte W\u00fcrfelkonfiguration.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "setShouldUsePrivateThrow",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Setzt die Information, ob der W\u00fcrfelwurf privat stattfinden soll.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "shouldUsePrivateThrow",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "setUseOpenThrows",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Setzt die Information, ob ein offener Wurf oder ein normaler Wurf stattfinden soll.\n                                            Offene W\u00fcrfelw\u00fcrfe sind speziell. Falls die Augenzahl des W\u00fcrfels die Maximalsumme zeigt,\n                                            so wird noch einmal gew\u00fcrfelt und die neue Zahl dazu addiert, solange bis der W\u00fcrfel\n                                            nicht mehr die Maximalsumme zeigt.<\/p>\n                                            <p><b>Beispiel:<\/b> \/diceo 1w4 -> 4 -> 4 -> 3 = 11<\/p>",
+                    "parameters": [
+                        {
+                            "name": "shouldUseOpenThrow",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "DiceEvent",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/DiceEvent.html",
+            "methods": [
+                {
+                    "name": "getDiceResult",
+                    "return": "DiceResult",
+                    "deprecated": false,
+                    "description": "<p>Liefert das <code>DiceResult<\/code> des W\u00fcrfelwurfs.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getUser",
+                    "return": "User",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Nutzer, der gew\u00fcrfelt hat.<\/p>",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "DiceResult",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/DiceResult.html",
+            "methods": [
+                {
+                    "name": "getDiceConfiguration",
+                    "return": "DiceConfiguration",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Konfiguration mit der gew\u00fcrfelt wurde.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getSingleDiceResults",
+                    "return": "SingleDiceResult[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert ein Array mit Details zu den einzelnen Ergebnissen pro W\u00fcrfeltyp.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "totalSum",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Summe der Augenzahlen aller  W\u00fcrfel<\/p>",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Gender",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/Gender.html",
+            "methods": []
+        },
+        {
+            "name": "KnuddelAmount",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/KnuddelAmount.html",
+            "methods": [
+                {
+                    "name": "asNumber",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Gibt den Wert der Knuddel als Zahl zur\u00fcck.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "KnuddelAmount",
+                    "return": "KnuddelAmount",
+                    "deprecated": false,
+                    "description": "<p>Erzeugt eine Instanz von <code>KnuddelAmount<\/code> mit der Anzahl Knuddel.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "knuddel",
+                            "type": "Double",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "KnuddelsServer",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/KnuddelsServer.html",
+            "methods": [
+                {
+                    "name": "canAccessUser",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob der Nutzer mit der \u00fcbergebenen userId geladen werden darf. Neben dem AppDeveloper k\u00f6nnen nur Nutzer geladen werden, die sich einmal im Channel befanden, als die App\n                                            lief.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "userId",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAppDeveloper",
+                    "return": "User",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Entwickler der App, falls er auf diesem Chatserver aktiv ist, ansonsten null.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getAppId",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert die eindeutige Id der <code>App<\/code>.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getAppManagers",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Liste der AppManagers f\u00fcr diese <code>App<\/code>. Die Channelbesitzer z\u00e4hlen automatisch auch als AppManager.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getAppName",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert den in der Konfiguration eingestellten Namen der <code>App<\/code>.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getAppVersion",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Version der App, die in der Konfiguration eingestellt wurde.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getChannel",
+                    "return": "Channel",
+                    "deprecated": false,
+                    "description": "<p>Liefert den <code>Channel<\/code> in dem die App l\u00e4uft.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getDefaultBotUser",
+                    "return": "BotUser",
+                    "deprecated": false,
+                    "description": "<p>Liefert den <code>BotUser<\/code>, der standardm\u00e4\u00dfig zum Channel geh\u00f6rt.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getDefaultLogger",
+                    "return": "KLogger",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Default-Logger f\u00fcr diese App. Dinge die du hier rein loggst werden die im Chat vom App-Logs-User zugestellt.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getFullImagePath",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Pfad eines Bildes zur Integration in der eigenen App.\n                                            Alle Bilder, die im Ordner \/images in der App abgelegt werden k\u00f6nnen hier referenziert werden.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "imageName",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getFullSystemImagePath",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Pfad eines <b>Systembildes<\/b> zur Integration in der eigenen App.\n                                            Alle Bilder, die unter <a href=\"http:\/\/apps1.knuddels.biz\/kimg\/\" target=\"_blank\">http:\/\/apps1.knuddels.biz\/kimg\/<\/a>\n                                            erreichbar sind k\u00f6nnen hier referenziert werden.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "imageName",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getNickCorrectCase",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Nicknamen des Nutzers mit der \u00fcbergebenen userId in der korrekten Schreibweise.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "userId",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getPersistence",
+                    "return": "AppPersistence",
+                    "deprecated": false,
+                    "description": "<p>Liefert die <code>AppPersistence<\/code>, mit der sich Zahlen, Strings und Javascript-Objekte langfristig und \u00fcber die Session einer App hinaus gespeichert werden k\u00f6nnen.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getUser",
+                    "return": "User",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Nutzer mit der \u00fcbergebenen userId. Neben dem AppDeveloper k\u00f6nnen nur Nutzer geladen werden, die sich einmal im Channel befanden, als die App lief. Es wird empfohlen vor der\n                                            Abfrage von <code>getUser(userId)<\/code> mit <code>canAccessUser(userId)<\/code> abzufragen, ob dies funktionieren wird.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "userId",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getUserId",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die userId des Nutzers mit dem \u00fcbergebenen Nicknamen.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "nick",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "isTestSystem",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Information, ob der Server auf dem die <code>App<\/code> gerade l\u00e4uft ein Testsystem ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "refreshHooks",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Aktualisiert die Liste der genutzten Hooks. Werden zur Laufzeit chatCommands oder App-Hooks (wie mayJoinChannel) dynamisch erzeugt oder gel\u00f6scht, so muss danach <code>refreshHooks()<\/code>\n                                            aufgerufen werden, damit diese \u00c4nderung wirksam wird.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "userExists",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob ein Nutzer mit dem \u00fcbergebenen Nicknamen existiert.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "nick",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Logger",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/Logger.html",
+            "methods": [
+                {
+                    "name": "debug",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Logge einen Text mit Level DEBUG.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "msg",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Text, der geloggt werden soll<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "error",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Logge einen Text mit Level ERROR.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "msg",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Text, der geloggt werden soll<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "fatal",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Logge einen Text mit Level FATAL.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "msg",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Text, der geloggt werden soll<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "info",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Logge einen Text mit Level INFO.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "msg",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Text, der geloggt werden soll<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "warn",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Logge einen Text mit Level WARN.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "msg",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Text, der geloggt werden soll<\/p>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Message",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/Message.html",
+            "methods": [
+                {
+                    "name": "getAuthor",
+                    "return": "User",
+                    "deprecated": false,
+                    "description": "<p>Liefert den <code>User<\/code>, der die Nachricht verfasst hat.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getCreationDate",
+                    "return": "Date",
+                    "deprecated": false,
+                    "description": "<p>Liefert den genauen Zeitpunkt, zu dem die Nachricht erstellt wurde.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getText",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Inhalt der Nachricht.<\/p>",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Persistence",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/Persistence.html",
+            "methods": [
+                {
+                    "name": "addNumber",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Addiert den \u00fcbergebenen <code>value<\/code> auf die unter dem Key <code>key<\/code> vorhandenen Wert drauf.\n                                            Value kann auch negativ sein um eine Subtraktion durchzuf\u00fchren.\n                                            Falls keine Zahl f\u00fcr den <code>key<\/code> existiert, so wird der <code>value<\/code> f\u00fcr <code>key<\/code> gespeichert.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteNumber",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>L\u00f6scht die Zahl, die unter <code>key<\/code> gespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteObject",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>L\u00f6scht das Objekt, das unter <code>key<\/code> gespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteString",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>L\u00f6scht die Zeichenkette, die unter <code>key<\/code> gespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getNumber",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Zahl, die f\u00fcr den <code>key<\/code> gespeichert ist.\n                                            Falls f\u00fcr <code>key<\/code> keine Zahl gespeichert ist, so gibt die Methode\n                                            den <code>defaultValue<\/code> zur\u00fcck.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "defaultValue",
+                            "type": "Number",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getObject",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": "<p>Liefert das Objekt, das f\u00fcr den <code>key<\/code> gespeichert ist.\n                                            Falls f\u00fcr <code>key<\/code> kein Objekt gespeichert ist, so gibt die Methode\n                                            den <code>defaultValue<\/code> zur\u00fcck.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "defaultValue",
+                            "type": "Object",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Zeichenkette, die f\u00fcr den <code>key<\/code> gespeichert ist.\n                                            Falls f\u00fcr <code>key<\/code> keine Zeichenkette gespeichert ist, so gibt die Methode\n                                            den <code>defaultValue<\/code> zur\u00fcck.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "defaultValue",
+                            "type": "String",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "hasNumber",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob unter dem <code>key<\/code> eine Zahl abgespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "hasObject",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob unter dem <code>key<\/code> ein Objekt abgespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "hasString",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob unter dem <code>key<\/code> ein String abgespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "setNumber",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Setzt die Zahl <code>value<\/code> f\u00fcr den <code>key<\/code>.\n                                            Falls bereits eine Zahl f\u00fcr den <code>key<\/code> existiert, so wird diese \u00fcberschrieben.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "setObject",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Setzt das Objekt <code>value<\/code> f\u00fcr den <code>key<\/code>.\n                                            Falls bereits ein Objekt f\u00fcr den <code>key<\/code> existiert, so wird dieses \u00fcberschrieben.\n                                            Das als JSON serialisierte Objekt darf maximal 100kb gro\u00df sein.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "object",
+                            "type": "Object",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "setString",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Setzt die Zeichenkette <code>value<\/code> f\u00fcr den <code>key<\/code>.\n                                            Falls bereits eine Zeichenkette f\u00fcr den <code>key<\/code> existiert, so wird diese \u00fcberschrieben.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "PrivateMessage",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/PrivateMessage.html",
+            "methods": [
+                {
+                    "name": "getAuthor",
+                    "return": "User",
+                    "deprecated": false,
+                    "description": "<p>Liefert den <code>User<\/code>, der die Nachricht verfasst hat.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getCreationDate",
+                    "return": "Date",
+                    "deprecated": false,
+                    "description": "<p>Liefert den genauen Zeitpunkt, zu dem die Nachricht erstellt wurde.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getReceivingUsers",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Liste der Empf\u00e4nger der Nachricht.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getText",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Inhalt der Nachricht.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "sendReply",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Sendet eine private Nachricht an alle Beteiligten des Gespr\u00e4ches.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "text",
+                            "type": "Object",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "PublicMessage",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/PublicMessage.html",
+            "methods": [
+                {
+                    "name": "getAuthor",
+                    "return": "User",
+                    "deprecated": false,
+                    "description": "<p>Liefert den <code>User<\/code>, der die Nachricht verfasst hat.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getCreationDate",
+                    "return": "Date",
+                    "deprecated": false,
+                    "description": "<p>Liefert den genauen Zeitpunkt, zu dem die Nachricht erstellt wurde.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getText",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Inhalt der Nachricht.<\/p>",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "RandomOperations",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/RandomOperations.html",
+            "methods": [
+                {
+                    "name": "flipTrue",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert <code>true<\/code> in <code>truePropability<\/code>\/1 F\u00e4llen<\/p>",
+                    "parameters": [
+                        {
+                            "name": "truePropability",
+                            "type": "Float",
+                            "optional": false,
+                            "description": "<p>zwischen 0.0 und 1.0<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "getRandomObject",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": "<p>Liefert ein zuf\u00e4lliges Objekt aus einem Array.\n                                            Falls das Array leer ist, wird <code>null<\/code> zur\u00fcckgeliefert.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "objects",
+                            "type": "Object[]",
+                            "optional": false,
+                            "description": "<p>Array, aus dem das zuf\u00e4llige Objekt ausgew\u00e4hlt werden soll.<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "nextInt",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert eine Zufallszahl zwischen 0 (inklusiv) und <code>n<\/code> (exklusiv).<\/p>",
+                    "parameters": [
+                        {
+                            "name": "n",
+                            "type": "Int",
+                            "optional": false,
+                            "description": "<p>obere Schranke der Zufallszahl. Muss gr\u00f6\u00dfer als 0 sein.<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "nextInts",
+                    "return": "Number[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert ein Array mit Zufallszahlen zwischen 0 (inklusiv) und <code>n<\/code> (exklusiv).<\/p>",
+                    "parameters": [
+                        {
+                            "name": "n",
+                            "type": "Int",
+                            "optional": false,
+                            "description": "<p>obere Schranke der Zufallszahl. Muss gr\u00f6\u00dfer als 0 sein.<\/p>"
+                        },
+                        {
+                            "name": "count",
+                            "type": "Int",
+                            "optional": false,
+                            "description": "<p>Anzahl der Zufallszahlen.<\/p>"
+                        },
+                        {
+                            "name": "onlyDifferentNumbers",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": "<p>Information, ob eine Zahl doppelt vorkommen darf.<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "shuffleObjects",
+                    "return": "Object[]",
+                    "deprecated": false,
+                    "description": "<p>Mischt das Array der \u00fcbergebenen Objekte und liefert es zur\u00fcck.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "objects",
+                            "type": "Object[]",
+                            "optional": false,
+                            "description": "<p>Objekte, die gemischt werden sollen<\/p>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "SingleDiceResult",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/SingleDiceResult.html",
+            "methods": [
+                {
+                    "name": "getDice",
+                    "return": "Dice",
+                    "deprecated": false,
+                    "description": "<p>Liefert den W\u00fcrfel zur\u00fcck, durch den dieses <code>SingleDiceResult<\/code> erzeugt wurde.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "sum",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Summe der Augenzahlen des <code>SingleDiceResult<\/code>.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "valuesRolled",
+                    "return": "Number[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Ziffern, die gew\u00fcrfelt wurden.<\/p>",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "String",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/String.html",
+            "methods": [
+                {
+                    "name": "endsWith",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Diese Methode liefert die Information, ob der String auf dem die Methode aufgerufen wurde\n                                            mit einem bestimmten Suffix endet.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "suffix,",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>der \u00fcberpr\u00fcft werden soll<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "escapeKCode",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Die Methode liefert den {String} zur\u00fcck, auf dem sie aufgerufen wurde mit KCode escaped.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getPixelWidth",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Breite des String in der Schriftart Arial mit der gegeben Schriftgr\u00f6\u00dfe und Information, ob Text fett dargestellt werden soll.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "fontSize",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "isBold",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "limitString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert einen String, der in der Schriftart Arial mit der gegeben Schriftgr\u00f6\u00dfe und Information, ob Text fett dargestellt werden soll\n                                            maximal <code>maxPixelWidth<\/code> breit ist. Wird der Text daf\u00fcr gek\u00fcrzt, so wird an das Ende <code>abbreviationMarker<\/code> angehangen.\n                                            Falls <code>abbreviationMarker<\/code> nicht \u00fcbergeben wurde, so ist es automatisch '...'.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "fontSize",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "isBold",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "maxPixelWidth",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "abbreviationMarker",
+                            "type": "String",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "startsWith",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Diese Methode liefert die Information, ob der String auf dem die Methode aufgerufen wurde\n                                            mit einem bestimmten Prefix beginnt.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "prefix,",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>der \u00fcberpr\u00fcft werden soll<\/p>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/User.html",
+            "methods": [
+                {
+                    "name": "equals",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Vergleicht den \u00fcbergebenen Nutzer und liefert <code>true<\/code>, falls der \u00fcbergebene Nutzer\n                                            identisch ist mit dem aktuellen Nutzer.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getAge",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert das Alter des Nutzers. Bei Nutzern, die bereits sehr lange in der Plattform sind kann es vorkommen, dass kein Alter angegeben wurde. In diesem Fall ist das Alter <code>0<\/code>.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getGender",
+                    "return": "Gender",
+                    "deprecated": false,
+                    "description": "<p>Liefert das Geschlecht des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getKnuddelAmount",
+                    "return": "KnuddelAmount",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Anzahl der Knuddel, die der Nutzer besitzt.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getNick",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Nicknamen des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getOnlineMinutes",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die vom Nutzer verbrachte Zeit im gesamten Chatsystem In Minuten.\n                                            <b>Hinweis:<\/b> Die Minutenzahl wird derzeit immer nur zu dem Zeitpunkt aktualisiert,\n                                            wenn der Nutzer offline geht.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getPersistence",
+                    "return": "UserPersistence",
+                    "deprecated": false,
+                    "description": "<p>Liefert ein <code>UserPersistence<\/code>-Objekt f\u00fcr diesen Nutzer. Mit diesem Objekt kann eine <code>App<\/code> sich Dinge \u00fcber diesen speziellen Nutzer merken.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getProfileLink",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert einen Link zum Profil des Nutzers, den man im Chat anzeigen kann.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "displayText",
+                            "type": "String",
+                            "optional": true,
+                            "description": "<p>Anzeigetext, falls nicht angegeben Nickname des Nutzers<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "getReadme",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Readme des Nutzers, die er mit \/readme TEXT in sein Profil gesetzt hat.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getRegDate",
+                    "return": "Date",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Zeitpunkt der Registrierung des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getUserId",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die eindeutige Nutzerkennung des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getUserStatus",
+                    "return": "UserStatus",
+                    "deprecated": false,
+                    "description": "<p>Liefert den <code>UserStatus<\/code> des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getUserType",
+                    "return": "UserType",
+                    "deprecated": false,
+                    "description": "<p>Liefert den <code>UserType<\/code> des Nutzers.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isAppDeveloper",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzers der Entwickler der <code>App<\/code> ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isAppManager",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Information, ob dieser Nutzer ein AppManager f\u00fcr diese <code>App<\/code> ist. Die Channelbesitzer z\u00e4hlen automatisch auch als AppManager.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isAway",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Information, ob der Nutzer sich mittels \/away-Funktion kurz abgemeldet hat.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isChannelModerator",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzer Channelmoderator im <code>Channel<\/code> der <code>App<\/code> ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isChannelOwner",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Information, ob dieser Nutzer Channelbesitzer im <code>Channel<\/code> der <code>App<\/code> ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isColorMuted",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzer beim Schreiben \u00f6ffentlicher Nachrichten im <code>Channel<\/code> derzeit f\u00fcr die Verwendung von Textformatierungen und Farben gesperrt ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isEventModerator",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzer Eventmoderator im <code>Channel<\/code> der <code>App<\/code> ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isLocked",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzer derzeit f\u00fcr das Betreten des <code>Channel<\/code> gesperrt ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isMuted",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert Information, ob dieser Nutzer derzeit f\u00fcr das Schreiben \u00f6ffentlicher Nachrichten im <code>Channel<\/code> gesperrt ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isOnline",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Information, ob der Nutzer irgendwo im Chat online ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "isOnlineInChannel",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Information, ob der Nutzer online im <code>Channel<\/code> der <code>App<\/code> ist.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "sendPostMessage",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Shortcut-Funktion um mit dem Default<code>BotUser<\/code> eine \/m zu versenden.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "topic",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Betreff der Nachricht<\/p>"
+                        },
+                        {
+                            "name": "text",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Inhalt der Nachricht<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "sendPrivateMessage",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Shortcut-Funktion um mit dem Default<code>BotUser<\/code> eine private Nachricht zu versenden.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": "<p>Inhalt der Nachricht<\/p>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "UserPersistence",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/UserPersistence.html",
+            "methods": [
+                {
+                    "name": "addNumber",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Addiert den \u00fcbergebenen <code>value<\/code> auf die unter dem Key <code>key<\/code> vorhandenen Wert drauf.\n                                            Value kann auch negativ sein um eine Subtraktion durchzuf\u00fchren.\n                                            Falls keine Zahl f\u00fcr den <code>key<\/code> existiert, so wird der <code>value<\/code> f\u00fcr <code>key<\/code> gespeichert.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteNumber",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>L\u00f6scht die Zahl, die unter <code>key<\/code> gespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteObject",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>L\u00f6scht das Objekt, das unter <code>key<\/code> gespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "deleteString",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>L\u00f6scht die Zeichenkette, die unter <code>key<\/code> gespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getNumber",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Zahl, die f\u00fcr den <code>key<\/code> gespeichert ist.\n                                            Falls f\u00fcr <code>key<\/code> keine Zahl gespeichert ist, so gibt die Methode\n                                            den <code>defaultValue<\/code> zur\u00fcck.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "defaultValue",
+                            "type": "Number",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getObject",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": "<p>Liefert das Objekt, das f\u00fcr den <code>key<\/code> gespeichert ist.\n                                            Falls f\u00fcr <code>key<\/code> kein Objekt gespeichert ist, so gibt die Methode\n                                            den <code>defaultValue<\/code> zur\u00fcck.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "defaultValue",
+                            "type": "Object",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Zeichenkette, die f\u00fcr den <code>key<\/code> gespeichert ist.\n                                            Falls f\u00fcr <code>key<\/code> keine Zeichenkette gespeichert ist, so gibt die Methode\n                                            den <code>defaultValue<\/code> zur\u00fcck.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "defaultValue",
+                            "type": "String",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "hasNumber",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob unter dem <code>key<\/code> eine Zahl abgespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "hasObject",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob unter dem <code>key<\/code> ein Objekt abgespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "hasString",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<p>Informiert dar\u00fcber, ob unter dem <code>key<\/code> ein String abgespeichert ist.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "setNumber",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Setzt die Zahl <code>value<\/code> f\u00fcr den <code>key<\/code>.\n                                            Falls bereits eine Zahl f\u00fcr den <code>key<\/code> existiert, so wird diese \u00fcberschrieben.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "setObject",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Setzt das Objekt <code>value<\/code> f\u00fcr den <code>key<\/code>.\n                                            Falls bereits ein Objekt f\u00fcr den <code>key<\/code> existiert, so wird dieses \u00fcberschrieben.\n                                            Das als JSON serialisierte Objekt darf maximal 100kb gro\u00df sein.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "object",
+                            "type": "Object",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "setString",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Setzt die Zeichenkette <code>value<\/code> f\u00fcr den <code>key<\/code>.\n                                            Falls bereits eine Zeichenkette f\u00fcr den <code>key<\/code> existiert, so wird diese \u00fcberschrieben.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "UserPersistenceNumberEntry",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/UserPersistenceNumberEntry.html",
+            "methods": [
+                {
+                    "name": "getPosition",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Position des Elements in der Persistenz.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getUser",
+                    "return": "User",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Nutzer.<\/p>",
+                    "parameters": []
+                },
+                {
+                    "name": "getValue",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Wert.<\/p>",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "UserPersistenceNumbers",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/UserPersistenceNumbers.html",
+            "methods": [
+                {
+                    "name": "users",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Ruft eine Funktion f\u00fcr alle Nutzer auf, die einen bestimmten <code>key<\/code> in der <code>UserPersistence<\/code> gesetzt haben.\n                                            Hierbei greifen die \u00fcbergebenen Filter.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "callback",
+                            "type": "Function",
+                            "optional": false,
+                            "description": "<p>wird f\u00fcr jeden Eintrag aufgerufen. Wenn diese Methode <code>false<\/code> returned, dann wird f\u00fcr alle weiteren Eintr\u00e4ge der callback nicht aufgerufen.<\/p>"
+                        },
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "value",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "index",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "totalCount",
+                            "type": "Number",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "parameters",
+                            "type": "Object",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "ascending",
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": "<p>Entscheidet, ob numerisch aufw\u00e4rts (<code>true<\/code>, default) oder abw\u00e4rts (<code>false<\/code>) sortiert werden soll.<\/p>"
+                        },
+                        {
+                            "name": "minimumValue",
+                            "type": "Number",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "maximumValue",
+                            "type": "Number",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "maximumCount",
+                            "type": "Number",
+                            "optional": true,
+                            "description": "<p>Maximale Anzahl an Elementen, f\u00fcr die each aufgerufen werden soll.<\/p>"
+                        },
+                        {
+                            "name": "onStart",
+                            "type": "Function",
+                            "optional": true,
+                            "description": "<p>Methode, die aufgerufen wird, bevor damit begonnen wird f\u00fcr jedes Element die <code>callback<\/code>-Methode aufzurufen.<\/p>"
+                        },
+                        {
+                            "name": "onEnd",
+                            "type": "Function",
+                            "optional": true,
+                            "description": "<p>Methode, die aufgerufen wird, nachdem f\u00fcr jedes Element die <code>callback<\/code>-Methode aufgerufen wurde oder die callback-Methode <code>false<\/code> returned hat.<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "getCount",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Anzahl aller unterschiedlichen Nutzer, die Werte f\u00fcr einen bestimmten <code>key<\/code> gespeichert haben.\n                                            Hierbei kann optional der Wertebereich \u00fcber die <code>parameters<\/code> eingegrenzt werden.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "parameters",
+                            "type": "Object",
+                            "optional": true,
+                            "description": "<p>Objekt, das optionale Parameter zum eingrenzen beinhaltet.<\/p>"
+                        },
+                        {
+                            "name": "minimumValue",
+                            "type": "Number",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "maximumValue",
+                            "type": "Number",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getPosition",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Position des Nutzers.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "user|userId",
+                            "type": "User | Number",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "parameters",
+                            "type": "Object",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "ascending",
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": "<p>Entscheidet, ob numerisch aufw\u00e4rts (<code>true<\/code>, default) oder abw\u00e4rts (<code>false<\/code>) sortiert werden soll.<\/p>"
+                        },
+                        {
+                            "name": "minimumValue",
+                            "type": "Number",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getRank",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "<p>Liefert den Rang des Nutzers.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "user|userId",
+                            "type": "User | Number",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "parameters",
+                            "type": "Object",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "ascending",
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": "<p>Entscheidet, ob numerisch aufw\u00e4rts (<code>true<\/code>, default) oder abw\u00e4rts (<code>false<\/code>) sortiert werden soll.<\/p>"
+                        },
+                        {
+                            "name": "minimumValue",
+                            "type": "Number",
+                            "optional": true,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "getSortedEntries",
+                    "return": "UserPersistenceNumberEntry[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert ein Array mit <code>UserPersistenceNumberEntry<\/code>-Objekten f\u00fcr einen bestimmten <code>key<\/code>.\n                                            Hierdurch kann beispielsweise eine bl\u00e4tterbare Topliste abgebildet werden.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "parameters",
+                            "type": "Object",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "ascending",
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": "<p>Entscheidet, ob numerisch aufw\u00e4rts (<code>true<\/code>, default) oder abw\u00e4rts (<code>false<\/code>) sortiert werden soll.<\/p>"
+                        },
+                        {
+                            "name": "count",
+                            "type": "Number",
+                            "optional": true,
+                            "description": "<p>Anzahl der Eintr\u00e4ge (default 25, maximal 100)<\/p>"
+                        },
+                        {
+                            "name": "page",
+                            "type": "Number",
+                            "optional": true,
+                            "description": "<p>Seite, die abgerufen werden soll (default 0)<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "getSortedEntriesAdjacent",
+                    "return": "UserPersistenceNumberEntry[]",
+                    "deprecated": false,
+                    "description": "<p>Liefert ein Array mit <code>UserPersistenceNumberEntry<\/code>-Objekten f\u00fcr einen bestimmten <code>key<\/code>. Hierbei werden die n\u00e4hesten Elemente gew\u00e4hlt,\n                                            die am \u00fcbergebenen User\/UserId liegen. <\/p>\n                                            <p>Beispiel: Der Nutzer ist in der Liste auf Position 20, dann werden die Resultate von 14-24 bei einem Count von 10 ausgegeben.\n                                            Beispiel: Der Nutzer ist in der Liste auf Position 3, dann werden die Resultate von 1-10 bei einem Count von 10 ausgegeben.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "user|userId",
+                            "type": "User | Number",
+                            "optional": false,
+                            "description": ""
+                        },
+                        {
+                            "name": "parameters",
+                            "type": "Object",
+                            "optional": true,
+                            "description": ""
+                        },
+                        {
+                            "name": "ascending",
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": "<p>Entscheidet, ob numerisch aufw\u00e4rts (<code>true<\/code>, default) oder abw\u00e4rts (<code>false<\/code>) sortiert werden soll.<\/p>"
+                        },
+                        {
+                            "name": "count",
+                            "type": "Number",
+                            "optional": true,
+                            "description": "<p>Anzahl der Eintr\u00e4ge (default 25, maximal 100)<\/p>"
+                        }
+                    ]
+                },
+                {
+                    "name": "getSum",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "<p>Liefert die Summe aller via <code>UserPersistence<\/code> gespeicherten Zahlen f\u00fcr den \u00fcbergebenen <code>key<\/code>.<\/p>",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "UserStatus",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/UserStatus.html",
+            "methods": []
+        },
+        {
+            "name": "UserType",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/UserType.html",
+            "methods": []
+        }
+    ],
+    "constants": []
+}

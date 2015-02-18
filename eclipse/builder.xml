@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="plugin_export" name="build">
+	<target name="plugin_export">
+		<pde.exportPlugins destination="D:\MyChannel Apps\Extensions\eclipse\build" exportSource="false" exportType="directory" plugins="de.mca.extensions.eclipse" qualifier="201502181108" useJARFormat="true"/>
+	</target>
+</project>

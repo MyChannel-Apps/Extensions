@@ -1,0 +1,2758 @@
+{
+    "version": "1.0.0",
+    "url": "http:\/\/www.mychannel-apps.de\/documentation\/",
+    "classes": [
+        {
+            "name": "KConfig",
+            "static": true,
+            "source": "framework\/core\/KConfig.js",
+            "methods": []
+        },
+        {
+            "name": "DB",
+            "static": true,
+            "source": "framework\/core\/Database.js",
+            "methods": [
+                {
+                    "name": "getUser",
+                    "return": "Persistence",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getChannel",
+                    "return": "Persistence",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "load",
+                    "return": "Mixed",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "default",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "save",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "default",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "delete",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Bot",
+            "static": true,
+            "source": "framework\/core\/Bot.js",
+            "methods": [
+                {
+                    "name": "getNick",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "join",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "leave",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "knuddel",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "amount",
+                            "type": "KnuddelAmount",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getKnuddels",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "exception",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String, Exception",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "publicMessage",
+                    "return": "void",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "postMessage",
+                    "return": "void",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "subject",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "privateMessage",
+                    "return": "void",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": "Ist der Wert `undefined` so werden alle Nutzer im Channel angeschrieben."
+                        },
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "public",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "post",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "subject",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "private",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": "Ist der Wert `undefined` so werden alle Nutzer im Channel angeschrieben."
+                        },
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "exec",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "command",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getAge",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getGender",
+                    "return": "Gender",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getKnuddelAmount",
+                    "return": "KnuddelAmount",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getOnlineMinutes",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getProfileLink",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "displayText",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getReadme",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getRegDate",
+                    "return": "Date",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getUserId",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getUserStatus",
+                    "return": "UserStatus",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getUserType",
+                    "return": "UserType",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "isAppDeveloper",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "isAppManager",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "isAway",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "isChannelModerator",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "isChannelOwner",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "isColorMuted",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "isEventModerator",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "isLocked",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "isMuted",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "isOnline",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "isOnlineInChannel",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Channel",
+            "static": true,
+            "source": "framework\/core\/Channel.js",
+            "methods": [
+                {
+                    "name": "getName",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getModerators",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getOwners",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getMods",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getUsers",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "filter",
+                            "type": "Object",
+                            "optional": false,
+                            "description": "Example Filter: ``{\r\n\tbot:\t\ttrue,\t\t\/\/ AppBot or SystemBot\r\n\tcm:\t\t\ttrue,\r\n\towner:\t\ttrue,\r\n\tevent:\t\ttrue,\r\n\tonline:\t\ttrue,\r\n\tinChannel:\ttrue,\r\n\taway:\t\ttrue,\r\n\tdeveloper:\ttrue,\r\n\tstatus:\t\t[\r\n\t\t\t\t\tStatus.Newbie,\r\n\t\t\t\t\tStatus.Family,\r\n\t\t\t\t\tStatus.Stammi,\r\n\t\t\t\t\tStatus.Ehrenz,\r\n\t\t\t\t\tStatus.Admin,\r\n\t\t\t\t\tStatus.Sysadmin,\r\n\t\t\t\t\tStatus.Bot\r\n\t\t\t\t],\r\n\tgender:\t\t[\r\n\t\t\t\t\tGender.Male,\r\n\t\t\t\t\tGender.Female,\r\n\t\t\t\t\tGender.Unknown\r\n\t\t\t\t]\r\n}``"
+                        }
+                    ]
+                },
+                {
+                    "name": "getOwner",
+                    "return": "User",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getCMutes",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getMutes",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getCLs",
+                    "return": "User[]",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "onDev",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Cronjob",
+            "static": false,
+            "source": "framework\/core\/Cronjob.js",
+            "methods": [
+                {
+                    "name": "getLastRun",
+                    "return": "Milliseconds",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getName",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getLastCheck",
+                    "return": "Milliseconds",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setLastCheck",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "milliseconds",
+                            "type": "Milliseconds",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "isRunning",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "start",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "stop",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "onShutdown",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Cron",
+            "static": true,
+            "source": "framework\/core\/Cronjob.js",
+            "methods": [
+                {
+                    "name": "enableOfflineRunCheck",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "add",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "job",
+                            "type": "Cronjob",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "saveData",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "onShutdown",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "KBank",
+            "static": true,
+            "source": "framework\/core\/KBank.js",
+            "methods": [
+                {
+                    "name": "addKn",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user_id",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "knuddel",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "subKn",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user_id",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "knuddel",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "payout",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user_id",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "knuddel",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "payin",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user_id",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "knuddel",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getKn",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user_id",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getKonto",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user_id",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "delKn",
+                    "return": "Boolean",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user_id",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "knuddel",
+                            "type": "Integer",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getTransit",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "loadData",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "saveData",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "resetData",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "fixData",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "cleanData",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getData",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getUsers",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setKn",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "uid",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "knuddel",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "KCode",
+            "static": false,
+            "source": "framework\/core\/KCode.js",
+            "methods": [
+                {
+                    "name": "append",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "component",
+                            "type": "String, KCode",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "newLine",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "newHr",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setAlignment",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "alignment",
+                            "type": "Alignment",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "addImage",
+                    "return": "void",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "image",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "addDots",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "disableOptimization",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "state",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Alignment",
+            "static": true,
+            "source": "framework\/core\/KCode.js",
+            "methods": [
+                {
+                    "name": "LEFT",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "CENTER",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "RIGHT",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "JUSTIFY",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Logger",
+            "static": true,
+            "source": "framework\/core\/Logger.js",
+            "methods": [
+                {
+                    "name": "addLogUser",
+                    "return": "void",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "uid",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "types",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "delLogUser",
+                    "return": "void",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String, Integer",
+                            "optional": false,
+                            "description": "Kann ein `Integer` als User-ID enthalten andernfalls ein Nickname als `String`"
+                        }
+                    ]
+                },
+                {
+                    "name": "debug",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "info",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "error",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "fatal",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "warn",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Users",
+            "static": true,
+            "source": "framework\/core\/User.js",
+            "methods": [
+                {
+                    "name": "get",
+                    "return": "User",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String, Integer",
+                            "optional": false,
+                            "description": "Kann ein `Integer` als User-ID enthalten andernfalls ein Nickname als `String`"
+                        }
+                    ]
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Status",
+            "static": true,
+            "source": "framework\/core\/User.js",
+            "methods": [
+                {
+                    "name": "Newbie",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Family",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Stammi",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Ehrenz",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Admin",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Sysadmin",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Bot",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "AppStore",
+            "static": true,
+            "source": "framework\/core\/AppStore.js",
+            "methods": [
+                {
+                    "name": "setSettings",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "options",
+                            "type": "Object",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "app",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "callback",
+                            "type": "App",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "isLocked",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "hasPayed",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Payment",
+            "static": true,
+            "source": "framework\/core\/AppStore.js",
+            "methods": [
+                {
+                    "name": "TIER_0",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_1",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_2",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_3",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_4",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_5",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_6",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_7",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "PaymentInterval",
+            "static": true,
+            "source": "framework\/core\/AppStore.js",
+            "methods": [
+                {
+                    "name": "Daily",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Weekly",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Monthly",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Hash",
+            "static": true,
+            "source": "framework\/core\/Hash.js",
+            "methods": [
+                {
+                    "name": "decodeForm",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "string",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Achtung: Diese Methode muss sich bei jedem ChatServer-Update \u00e4ndern!"
+                        }
+                    ]
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Hooks",
+            "static": true,
+            "source": "framework\/core\/Hooks.js",
+            "methods": [
+                {
+                    "name": "addFilter",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "callback",
+                            "type": "Callback",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "priority",
+                            "type": "Number",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "addAction",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "callback",
+                            "type": "Callback",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "priority",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "add",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "callback",
+                            "type": "Callback",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "priority",
+                            "type": "Number",
+                            "optional": true,
+                            "description": null
+                        },
+                        {
+                            "name": "is_filter",
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "priority",
+                            "type": "Number",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "applyFilter",
+                    "return": "Mixed",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "arg1",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "arg2,...",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "do",
+                    "return": "Mixed",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "is_filter",
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "KButton",
+            "static": false,
+            "source": "framework\/ui\/KButton.js",
+            "methods": [
+                {
+                    "name": "getCommand",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setCommand",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getText",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setText",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setIcon",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "removeIcon",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setColor",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "removeColor",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getHeight",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setHeight",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "removeHeight",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getWidth",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setWidth",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "removeWidth",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setSize",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "removeSize",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getX",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setX",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getY",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setY",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setPosition",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "useTextborder",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setEnabled",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "KImage",
+            "static": false,
+            "source": "framework\/ui\/KImage.js",
+            "methods": [
+                {
+                    "name": "setContainerSize",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setSize",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setPosition",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setX",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setY",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setLabel",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setLabelPosition",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setLabelColor",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "enableLabelBorder",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setBorder",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setQuadcut",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setShadow",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setMirror",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setGreyscale",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "KLink",
+            "static": false,
+            "source": "framework\/ui\/KLink.js",
+            "methods": [
+                {
+                    "name": "setCommand",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "enableHover",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "KTable",
+            "static": false,
+            "source": "framework\/ui\/KTable.js",
+            "methods": [
+                {
+                    "name": "add",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "KRow",
+            "static": false,
+            "source": "framework\/ui\/KTable.js",
+            "methods": [
+                {
+                    "name": "add",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getCells",
+                    "return": "KCell[]",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "KCell",
+            "static": false,
+            "source": "framework\/ui\/KTable.js",
+            "methods": [
+                {
+                    "name": "getSize",
+                    "return": "Mixed",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "KColor",
+            "static": false,
+            "source": "framework\/ui\/KColor.js",
+            "methods": [
+                {
+                    "name": "decode",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Color",
+            "static": true,
+            "source": "framework\/ui\/KColor.js",
+            "methods": [
+                {
+                    "name": "CHANNEL_RED",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "CHANNEL_BLUE",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "WHITE",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "BLACK",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "GRAY",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "LIGHT_GREY",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "DARK_GREY",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "RED",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "BLUE",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "GREEN",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "DARK_GREEN",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "YELLOW",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "CYAN",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "MAGENTA",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "PINK",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "ORANGE",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "BROWN",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "decode",
+                    "return": "KColor",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "KFont",
+            "static": false,
+            "source": "framework\/ui\/KFont.js",
+            "methods": [
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "FontStyle",
+            "static": true,
+            "source": "framework\/ui\/KFont.js",
+            "methods": [
+                {
+                    "name": "PLAIN",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "BOLD",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "ITALIC",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "KCountdown",
+            "static": false,
+            "source": "framework\/ui\/KCountdown.js",
+            "methods": [
+                {
+                    "name": "setTime",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "setFormat",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Array",
+            "static": true,
+            "source": "framework\/tools\/Array.js",
+            "methods": [
+                {
+                    "name": "each",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "callback",
+                            "type": "Function",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "random",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "exists",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "size",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Object",
+            "static": true,
+            "source": "framework\/tools\/Object.js",
+            "methods": [
+                {
+                    "name": "each",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "callback",
+                            "type": "Function",
+                            "optional": false,
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "sort",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Nach welchem Key soll sortiert werden?"
+                        },
+                        {
+                            "name": "order",
+                            "type": "ASC, DESC",
+                            "optional": true,
+                            "description": "Gibt die Sortierreihenfolge an."
+                        }
+                    ]
+                },
+                {
+                    "name": "exists",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "compare",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "object",
+                            "type": "Object",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "size",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "String",
+            "static": true,
+            "source": "framework\/tools\/String.js",
+            "methods": [
+                {
+                    "name": "startsWith",
+                    "return": "Boolean",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "string",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "endsWith",
+                    "return": "Boolean",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "string",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "format",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "format",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Beispiel: ``Hallo {0}, du hast derzeit {1} Knuddel.``"
+                        },
+                        {
+                            "name": "arg1",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "arg2,...",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "contains",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "string",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "StringBuffer",
+            "static": false,
+            "source": "framework\/tools\/StringBuffer.js",
+            "methods": [
+                {
+                    "name": "append",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        }
+    ],
+    "constants": [
+        {
+            "name": "Alignment",
+            "static": true,
+            "source": "framework\/core\/KCode.js",
+            "methods": [
+                {
+                    "name": "LEFT",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "CENTER",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "RIGHT",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "JUSTIFY",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Status",
+            "static": true,
+            "source": "framework\/core\/User.js",
+            "methods": [
+                {
+                    "name": "Newbie",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Family",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Stammi",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Ehrenz",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Admin",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Sysadmin",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Bot",
+                    "return": "Integer",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Payment",
+            "static": true,
+            "source": "framework\/core\/AppStore.js",
+            "methods": [
+                {
+                    "name": "TIER_0",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_1",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_2",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_3",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_4",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_5",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_6",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "TIER_7",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "PaymentInterval",
+            "static": true,
+            "source": "framework\/core\/AppStore.js",
+            "methods": [
+                {
+                    "name": "Daily",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Weekly",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "Monthly",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Color",
+            "static": true,
+            "source": "framework\/ui\/KColor.js",
+            "methods": [
+                {
+                    "name": "CHANNEL_RED",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "CHANNEL_BLUE",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "WHITE",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "BLACK",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "GRAY",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "LIGHT_GREY",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "DARK_GREY",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "RED",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "BLUE",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "GREEN",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "DARK_GREEN",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "YELLOW",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "CYAN",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "MAGENTA",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "PINK",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "ORANGE",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "BROWN",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "FontStyle",
+            "static": true,
+            "source": "framework\/ui\/KFont.js",
+            "methods": [
+                {
+                    "name": "PLAIN",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "BOLD",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "ITALIC",
+                    "return": "byte",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        }
+    ]
+}
