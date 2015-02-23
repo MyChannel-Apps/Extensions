@@ -72,9 +72,6 @@ public class Completion implements IJavaCompletionProposalComputer {
 	@Override
 	public void sessionStarted() {
 		/* Do Nothing */
-		// Check for update
-		// Load JSON
-		System.err.println("Session started.");
 	}
 	
 	public String getInputString(IDocument document, int offset) {

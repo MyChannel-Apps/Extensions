@@ -74,7 +74,6 @@
 				<command commandId="de.mca.extensions.eclipse.commands.emulator" icon="icons/run.png" style="pulldown" tooltip="start the app on the emulator" id="de.mca.extensions.eclipse.toolbar.knuddels.emulator" />
 			</toolbar>
 		</menuContribution>
-		
 		<menuContribution allPopups="false" locationURI="menu:de.mca.extensions.eclipse.toolbar.knuddels.emulator">
 			<command commandId="de.mca.extensions.eclipse.commands.emulator" label="Emulator" style="push" />
 			<command commandId="de.mca.extensions.eclipse.commands.settings" label="Settings" style="push" />
@@ -88,7 +87,46 @@
 	</extension>
 	<extension point="org.eclipse.ui.perspectiveExtensions">
 		<perspectiveExtension targetID="*">
-			<view closeable="false" id="de.mca.extensions.eclipse.Console" ratio="0.5" relationship="stack" visible="true" />
+			<view closeable="false" id="de.mca.extensions.eclipse.Console" ratio="0.5" relationship="bottom" visible="true" />
 		</perspectiveExtension>
-	</extension>>
+	</extension>
+	
+	<!-- Provider -->
+	<extension point="org.eclipse.ui.navigator.viewer">
+		<viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+			<includes>
+				<contentExtension pattern="de.mca.extensions.eclipse.ProjectProvider" />
+			</includes>
+		</viewerContentBinding>
+	</extension>
+	<extension point="org.eclipse.ui.navigator.navigatorContent">
+		<navigatorContent activeByDefault="true" appearsBefore="org.eclipse.ui.navigator.resourceContent" contentProvider="de.mca.extensions.eclipse.ContentProvider" icon="icons/project_knuddels.png" id="de.mca.extensions.eclipse.ProjectProvider"  labelProvider="de.mca.extensions.eclipse.LabelProvider" name="MyChannel-Apps" priority="higher">
+			<triggerPoints>
+				<or>
+					<adapt type="org.eclipse.core.resources.IProject" />
+					<adapt type="org.eclipse.core.resources.IResource" />
+					<adapt type="org.eclipse.core.resources.IFolder" />
+					<adapt type="org.eclipse.core.resources.IFile" />
+				</or>
+			</triggerPoints>
+			<possibleChildren>
+				<or>
+					<adapt type="org.eclipse.core.resources.IProject" />
+					<adapt type="org.eclipse.core.resources.IResource" />
+					<adapt type="org.eclipse.core.resources.IFolder" />
+					<adapt type="org.eclipse.core.resources.IFile" />
+				</or>
+			</possibleChildren>
+		</navigatorContent>
+	</extension>
+	
+	
+	
+	
+	
+	
+	
+	
+
+
 </plugin>

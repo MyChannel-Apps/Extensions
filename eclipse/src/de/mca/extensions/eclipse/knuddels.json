@@ -6,7 +6,167 @@
             "name": "App",
             "static": true,
             "source": "http:\/\/developer.knuddels.de\/docs\/classes\/App.html",
-            "methods": []
+            "methods": [
+                {
+                    "name": "mayJoinChannel",
+                    "return": "ChannelJoinPermission",
+                    "deprecated": false,
+                    "description": "<b style=\"color:red;\">Bisher nicht implementiert!<\/b><br \/>Dieses Methode wird aufgerufen, sobald ein Nutzer versucht den Channel zu betreten.Die App kann nun entscheiden, ob der Nutzer den Channel betreten darf.",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "maySendPublicMessage",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "<b style=\"color:red;\">Bisher nicht implementiert!<\/b><br \/>Diese Methode wird jedes Mal aufgerufen, sobald ein Nutzer versucht eine \u00f6ffentliche Nachricht zu sendne.Die App kann nun entscheiden, ob die Nachricht ver\u00f6ffentlicht werden darf.",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "onAppStart",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Diese Methode wird aufgerufen, sobald die App startet.Dies ist der beste Zeipunkt um Werte zu initialisieren und aus der Persistenz zu lesen.",
+                    "parameters": []
+                },
+                {
+                    "name": "onKnuddelReceived",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Diese Methode wird aufgerufen, wenn ein <code>BotUser<\/code> Knuddel von einem <code>User<\/code> erhalten hat.",
+                    "parameters": [
+                        {
+                            "name": "sender",
+                            "type": "User",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "receiver",
+                            "type": "BotUser",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "knuddelAmount",
+                            "type": "KnuddelAmount",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "onPrepareShutdown",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Diese Methode wird aufgerufen, wenn die <code>App<\/code> sich darauf vorbereiten soll heruntergefahren zu werden.Als Parameter wird die gesch\u00e4tzte Zeit \u00fcbergeben, die die <code>App<\/code> noch hat, bis sie heruntergefahren wirdund der Aufruf <code>onShutdown<\/code> folgt.<code>onPrepareShutdown<\/code> kann dazu benutzt werden das Nutzererlebnis zu verbessern,sofern eine App heruntergefahren werden muss (bsp. f\u00fcr Updates).Eine Spiele-App k\u00f6nnte z.B. entscheiden, dass sie keine weiteren Spiele er\u00f6ffnet und den Spielern offener Spieledie Information anzeigt, wie lange das Spiel noch l\u00e4uft, bevor es unentschieden endet.",
+                    "parameters": [
+                        {
+                            "name": "secondsTillShutdown",
+                            "type": "Numbers",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "onPrivateMessage",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Diese Methode wird aufgerufen, wenn ein <code>BotUser<\/code> privat angeschrieben wird.",
+                    "parameters": [
+                        {
+                            "name": "privateMessage",
+                            "type": "PrivateMessage",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "onPublicMessage",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Diese Methode wird aufgerufen, wenn im <code>Channel<\/code> der <code>App<\/code> eine \u00f6ffentliche Nachricht geschrieben wird.F\u00fcr Nachrichten von <code>BotUser<\/code>n wird diese Methode nicht aufgerufen.",
+                    "parameters": [
+                        {
+                            "name": "publicMessage",
+                            "type": "PublicMessage",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "onShutdown",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Diese Methode wird aufgerufen, wenn eine <code>App<\/code> beendet wird.Sobald diese Methode aufgerufen wird, steht nur noch ein begrenzter Teil der API zur Verf\u00fcgung.Die App sollte den kompletten Zustand in der Persistenz speichern, sodass der Zustandbeim n\u00e4chsten <code>onAppStart<\/code> wiederhergestellt werden kann.",
+                    "parameters": []
+                },
+                {
+                    "name": "onUserDiced",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Diese Methode wird aufgerufen, wenn ein <code>User<\/code> im <code>Channel<\/code> der <code>App<\/code>\u00fcber die Systemfunktionen (\/dice, \/diceo) w\u00fcrfelt.Die App kann auf das Ergebnis zugreifen und die Daten f\u00fcr die Auswertung und Entscheidungen nutzen.",
+                    "parameters": [
+                        {
+                            "name": "diceEvent",
+                            "type": "DiceEvent",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "onUserJoined",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Diese Methode wird aufgerufen, wenn ein <code>User<\/code> den <code>Channel<\/code> der <code>App<\/code> betritt.",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "onUserLeft",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Diese Methode wird aufgerufen, wenn ein <code>User<\/code> den <code>Channel<\/code> der <code>App<\/code> verl\u00e4sst.",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "chatCommands",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": "Erm\u00f6glicht das registrieren eigener Chatbefehle.In einem Channel kann nur eine <code>App<\/code> laufen, die einen bestimmten Chatbefehl nutzt.Versucht eine zweite <code>App<\/code> einen Chatbefehl zu registrieren, den eine andereApp bereits nutzt, so wird ein Fehler geloggt und die App startet nicht bzw. f\u00e4hrt herunter.",
+                    "parameters": []
+                }
+            ]
         },
         {
             "name": "AppPersistence",
@@ -875,7 +1035,29 @@
             "name": "Gender",
             "static": true,
             "source": "http:\/\/developer.knuddels.de\/docs\/classes\/Gender.html",
-            "methods": []
+            "methods": [
+                {
+                    "name": "Male",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Das Geschlecht ist m\u00e4nnlich.",
+                    "parameters": []
+                },
+                {
+                    "name": "Female",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Das Geschlecht ist weiblich.",
+                    "parameters": []
+                },
+                {
+                    "name": "Unknown",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Das Geschlecht ist nicht bekannt.",
+                    "parameters": []
+                }
+            ]
         },
         {
             "name": "KnuddelAmount",
@@ -897,9 +1079,15 @@
                     "parameters": [
                         {
                             "name": "knuddel",
-                            "type": "Double",
+                            "type": "Number",
                             "optional": false,
                             "description": ""
+                        },
+                        {
+                            "name": "knuddel",
+                            "type": "Double",
+                            "optional": false,
+                            "description": null
                         }
                     ]
                 }
@@ -1467,6 +1655,12 @@
                             "type": "Object",
                             "optional": false,
                             "description": ""
+                        },
+                        {
+                            "name": "text",
+                            "type": "void",
+                            "optional": false,
+                            "description": null
                         }
                     ]
                 }
@@ -1513,9 +1707,15 @@
                     "parameters": [
                         {
                             "name": "truePropability",
-                            "type": "Float",
+                            "type": "Number",
                             "optional": false,
                             "description": "<p>zwischen 0.0 und 1.0<\/p>"
+                        },
+                        {
+                            "name": "truePropability",
+                            "type": "Float",
+                            "optional": false,
+                            "description": null
                         }
                     ]
                 },
@@ -1541,9 +1741,15 @@
                     "parameters": [
                         {
                             "name": "n",
-                            "type": "Int",
+                            "type": "Number",
                             "optional": false,
                             "description": "<p>obere Schranke der Zufallszahl. Muss gr\u00f6\u00dfer als 0 sein.<\/p>"
+                        },
+                        {
+                            "name": "n",
+                            "type": "Int",
+                            "optional": false,
+                            "description": null
                         }
                     ]
                 },
@@ -1555,13 +1761,13 @@
                     "parameters": [
                         {
                             "name": "n",
-                            "type": "Int",
+                            "type": "Number",
                             "optional": false,
                             "description": "<p>obere Schranke der Zufallszahl. Muss gr\u00f6\u00dfer als 0 sein.<\/p>"
                         },
                         {
                             "name": "count",
-                            "type": "Int",
+                            "type": "Number",
                             "optional": false,
                             "description": "<p>Anzahl der Zufallszahlen.<\/p>"
                         },
@@ -1570,6 +1776,18 @@
                             "type": "Boolean",
                             "optional": false,
                             "description": "<p>Information, ob eine Zahl doppelt vorkommen darf.<\/p>"
+                        },
+                        {
+                            "name": "n",
+                            "type": "Int",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "count",
+                            "type": "Int",
+                            "optional": false,
+                            "description": null
                         }
                     ]
                 },
@@ -2190,6 +2408,13 @@
                     "deprecated": false,
                     "description": "<p>Liefert den Wert.<\/p>",
                     "parameters": []
+                },
+                {
+                    "name": "getRank",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Liefert den Rang des Elements in der Persistenz.",
+                    "parameters": []
                 }
             ]
         },
@@ -2351,6 +2576,12 @@
                             "type": "Number",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "user|userId",
+                            "type": "User|Number",
+                            "optional": false,
+                            "description": null
                         }
                     ]
                 },
@@ -2389,6 +2620,12 @@
                             "type": "Number",
                             "optional": true,
                             "description": ""
+                        },
+                        {
+                            "name": "user|userId",
+                            "type": "User|Number",
+                            "optional": false,
+                            "description": null
                         }
                     ]
                 },
@@ -2465,6 +2702,12 @@
                             "type": "Number",
                             "optional": true,
                             "description": "<p>Anzahl der Eintr\u00e4ge (default 25, maximal 100)<\/p>"
+                        },
+                        {
+                            "name": "user|userId",
+                            "type": "User|Number",
+                            "optional": false,
+                            "description": null
                         }
                     ]
                 },
@@ -2481,6 +2724,46 @@
                             "description": ""
                         }
                     ]
+                },
+                {
+                    "name": "deleteAll",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "L\u00f6scht alle gespeicherten Zahlen-Werte f\u00fcr den \u00fcbergebenen <code>key<\/code>.",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "each",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Ruft eine Funktion f\u00fcr alle Nutzer auf, die einen bestimmten <code>key<\/code> in der <code>UserPersistence<\/code> gesetzt haben.Hierbei greifen die \u00fcbergebenen Filter.",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "callback",
+                            "type": "Function",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "parameters",
+                            "type": "Object",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 }
             ]
         },
@@ -2488,14 +2771,213 @@
             "name": "UserStatus",
             "static": true,
             "source": "http:\/\/developer.knuddels.de\/docs\/classes\/UserStatus.html",
-            "methods": []
+            "methods": [
+                {
+                    "name": "Newbie",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "Family",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "Stammi",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "HonoryMember",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "Admin",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "SystemBot",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "Sysadmin",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                }
+            ]
         },
         {
             "name": "UserType",
             "static": true,
             "source": "http:\/\/developer.knuddels.de\/docs\/classes\/UserType.html",
-            "methods": []
+            "methods": [
+                {
+                    "name": "AppBot",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Bot der <code>App<\/code>.",
+                    "parameters": []
+                },
+                {
+                    "name": "SystemBot",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Bot des Knuddels-Chatsystems.",
+                    "parameters": []
+                },
+                {
+                    "name": "Human",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Menschlicher <code>User<\/code>.",
+                    "parameters": []
+                }
+            ]
         }
     ],
-    "constants": []
+    "constants": [
+        {
+            "name": "App",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/App.html",
+            "methods": [
+                {
+                    "name": "chatCommands",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": "Erm\u00f6glicht das registrieren eigener Chatbefehle.In einem Channel kann nur eine <code>App<\/code> laufen, die einen bestimmten Chatbefehl nutzt.Versucht eine zweite <code>App<\/code> einen Chatbefehl zu registrieren, den eine andereApp bereits nutzt, so wird ein Fehler geloggt und die App startet nicht bzw. f\u00e4hrt herunter.",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "Gender",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/Gender.html",
+            "methods": [
+                {
+                    "name": "Male",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Das Geschlecht ist m\u00e4nnlich.",
+                    "parameters": []
+                },
+                {
+                    "name": "Female",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Das Geschlecht ist weiblich.",
+                    "parameters": []
+                },
+                {
+                    "name": "Unknown",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Das Geschlecht ist nicht bekannt.",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "UserStatus",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/UserStatus.html",
+            "methods": [
+                {
+                    "name": "Newbie",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "Family",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "Stammi",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "HonoryMember",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "Admin",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "SystemBot",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                },
+                {
+                    "name": "Sysadmin",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "",
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "UserType",
+            "static": true,
+            "source": "http:\/\/developer.knuddels.de\/docs\/classes\/UserType.html",
+            "methods": [
+                {
+                    "name": "AppBot",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Bot der <code>App<\/code>.",
+                    "parameters": []
+                },
+                {
+                    "name": "SystemBot",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Bot des Knuddels-Chatsystems.",
+                    "parameters": []
+                },
+                {
+                    "name": "Human",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Menschlicher <code>User<\/code>.",
+                    "parameters": []
+                }
+            ]
+        }
+    ]
 }

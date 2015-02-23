@@ -105,6 +105,142 @@
                     "deprecated": false,
                     "description": null,
                     "parameters": []
+                },
+                {
+                    "name": "check",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "data",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "sum",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "count",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Liefert die Anzahl aller unterschiedlichen Nutzer, die Werte f\u00fcr einen bestimmten key gespeichert haben. ",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "from",
+                            "type": "Number",
+                            "optional": true,
+                            "description": null
+                        },
+                        {
+                            "name": "to",
+                            "type": "Number",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "sorted",
+                    "return": "UserPersistenceNumberEntry[]",
+                    "deprecated": false,
+                    "description": "Liefert ein Array mit UserPersistenceNumberEntry-Objekten",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "sortBy",
+                            "type": "ASC, DESC",
+                            "optional": true,
+                            "description": null
+                        },
+                        {
+                            "name": "count",
+                            "type": "Number",
+                            "optional": true,
+                            "description": null
+                        },
+                        {
+                            "name": "page",
+                            "type": "Number",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "users",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": "Ruft eine Funktion f\u00fcr alle Nutzer auf, die einen bestimmten `key` gespeichert haben",
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "callback",
+                            "type": "Function",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "sortBy",
+                            "type": "ASC, DESC",
+                            "optional": true,
+                            "description": null
+                        },
+                        {
+                            "name": "from",
+                            "type": "Number",
+                            "optional": true,
+                            "description": null
+                        },
+                        {
+                            "name": "to",
+                            "type": "Number",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
                 }
             ]
         },
@@ -148,7 +284,7 @@
                         },
                         {
                             "name": "amount",
-                            "type": "KnuddelAmount",
+                            "type": "KnuddelAmount, Number",
                             "optional": false,
                             "description": null
                         },
@@ -162,7 +298,7 @@
                 },
                 {
                     "name": "getKnuddels",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
@@ -263,7 +399,7 @@
                     "parameters": [
                         {
                             "name": "user",
-                            "type": "User",
+                            "type": "User, Array, Object, Number, String",
                             "optional": false,
                             "description": null
                         },
@@ -289,7 +425,7 @@
                     "parameters": [
                         {
                             "name": "user",
-                            "type": "User",
+                            "type": "User, Array, Object, Number, String",
                             "optional": false,
                             "description": "Ist der Wert `undefined` so werden alle Nutzer im Channel angeschrieben."
                         },
@@ -475,6 +611,13 @@
                     "deprecated": false,
                     "description": null,
                     "parameters": []
+                },
+                {
+                    "name": "getProfilePicture",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
                 }
             ]
         },
@@ -566,6 +709,193 @@
                     "deprecated": false,
                     "description": null,
                     "parameters": []
+                },
+                {
+                    "name": "usersOnline",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "filter",
+                            "type": "Object",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "setBackground",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "image",
+                            "type": "KImage, String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "style",
+                            "type": "Background",
+                            "optional": true,
+                            "description": null
+                        },
+                        {
+                            "name": "text",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Background",
+            "static": true,
+            "source": "framework\/core\/Channel.js",
+            "methods": [
+                {
+                    "name": "SCALED",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Strecken",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_FILLED_MODE1",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert (F\u00fcllend, Zentriert, Mode1)",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_FILLED_MODE2",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert (F\u00fcllend, Zentriert, Mode2)",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_FILLED_MODE3",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert (F\u00fcllend, Zentriert, Mode3)",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_COMPLETE_CENTERED",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert (Komplett sichtbar, Zentriert)",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_HEIGHT_RIGHT",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert auf H\u00f6he (Rechts",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_HEIGHT_TOP",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert auf Breite (Oben)",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_HEIGHT_BOTTOM",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert auf Breite (Unten)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_ZOOM_X2",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (2fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_ZOOM_X3",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (3fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_HORIZONTAL",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Zeilenweise versetzt)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_ZOOM_X2",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Zeilenweise, 2fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_ZOOM_X3",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Zeilenweise, 3fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_VERTICAL",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Spaltenweise)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_VERTICAL_ZOOM_X2",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Spaltenweise, 2fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_VERTICAL_ZOOM_X3",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Spaltenweise, 3fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "CENTERED",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Zentriert",
+                    "parameters": []
+                },
+                {
+                    "name": "CENTERED_ZOOM_X2",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Zentriert (2fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "CENTERED_ZOOM_X3",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Zentriert (3fache Gr\u00f6\u00dfe)",
+                    "parameters": []
                 }
             ]
         },
@@ -643,6 +973,32 @@
                     "deprecated": false,
                     "description": null,
                     "parameters": []
+                },
+                {
+                    "name": "constructor",
+                    "return": "Cronjob",
+                    "deprecated": false,
+                    "description": "Erstellt einen neuen Cronjob",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Name des Jobs"
+                        },
+                        {
+                            "name": "duration",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Wann soll der Cronjob ausgef\u00fchrt werden?\r\n\r\n``* * * * *\r\n\u252c \u252c \u252c \u252c \u252c\r\n\u2502 \u2502 \u2502 \u2502 \u2502\r\n\u2502 \u2502 \u2502 \u2502 \u2514\u2500\u2500\u2500\u2500 Wochentag (0-7) (wobei Sonntag 0 oder 7 sein kann)\r\n\u2502 \u2502 \u2502 \u2514\u2500\u2500\u2500\u2500\u2500\u2500 Monat (1-12)\r\n\u2502 \u2502 \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Tag des Monats (1-31)\r\n\u2502 \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Stunde (0-23)\r\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Minute (0-59)``\r\n\r\nSpezielle Funktionen durch die Sonderzeichen `\/`, `,` und `-`\r\nDas Zeichen `\/` teilt eine Zeitangabe\r\nDas zeichen `,` kombiniert mehrere Angaben (Oder-Funktion)\r\nDas Zeichen `-` legt einen Zeitraum fest (von - bis)"
+                        },
+                        {
+                            "name": "callback",
+                            "type": "Function",
+                            "optional": false,
+                            "description": "funktion die ausgef\u00fchrt wird, wenn die `duration` erreicht ist"
+                        }
+                    ]
                 }
             ]
         },
@@ -662,7 +1018,7 @@
                     "name": "add",
                     "return": "void",
                     "deprecated": false,
-                    "description": null,
+                    "description": "Diese Methode wird automatisch ausgef\u00fchrt wenn ein neuer Cronjob mittels `new Cronjob(name, duration, callback);` initialisiert wird.",
                     "parameters": [
                         {
                             "name": "job",
@@ -708,13 +1064,13 @@
                     "parameters": [
                         {
                             "name": "user_id",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         },
                         {
                             "name": "knuddel",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         }
@@ -728,13 +1084,13 @@
                     "parameters": [
                         {
                             "name": "user_id",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         },
                         {
                             "name": "knuddel",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         }
@@ -748,13 +1104,13 @@
                     "parameters": [
                         {
                             "name": "user_id",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         },
                         {
                             "name": "knuddel",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         },
@@ -774,13 +1130,13 @@
                     "parameters": [
                         {
                             "name": "user_id",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         },
                         {
                             "name": "knuddel",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         }
@@ -788,13 +1144,13 @@
                 },
                 {
                     "name": "getKn",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": [
                         {
                             "name": "user_id",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         }
@@ -808,7 +1164,7 @@
                     "parameters": [
                         {
                             "name": "user_id",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         }
@@ -822,13 +1178,13 @@
                     "parameters": [
                         {
                             "name": "user_id",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         },
                         {
                             "name": "knuddel",
-                            "type": "Integer",
+                            "type": "Number",
                             "optional": false,
                             "description": null
                         }
@@ -844,42 +1200,42 @@
                 {
                     "name": "loadData",
                     "return": "void",
-                    "deprecated": false,
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "saveData",
                     "return": "void",
-                    "deprecated": false,
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "resetData",
                     "return": "void",
-                    "deprecated": false,
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "fixData",
                     "return": "void",
-                    "deprecated": false,
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "cleanData",
                     "return": "void",
-                    "deprecated": false,
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "getData",
                     "return": "Object",
-                    "deprecated": false,
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
@@ -943,7 +1299,14 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "dotted",
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": "F\u00fcgt Punkte in der neuen Zeile ein"
+                        }
+                    ]
                 },
                 {
                     "name": "newHr",
@@ -1078,7 +1441,7 @@
                     "parameters": [
                         {
                             "name": "name",
-                            "type": "String, Integer",
+                            "type": "String, Number",
                             "optional": false,
                             "description": "Kann ein `Integer` als User-ID enthalten andernfalls ein Nickname als `String`"
                         }
@@ -1169,7 +1532,7 @@
                     "parameters": [
                         {
                             "name": "name",
-                            "type": "String, Integer",
+                            "type": "String, Number",
                             "optional": false,
                             "description": "Kann ein `Integer` als User-ID enthalten andernfalls ein Nickname als `String`"
                         }
@@ -1188,6 +1551,20 @@
                             "description": null
                         }
                     ]
+                },
+                {
+                    "name": "getProfilePicture",
+                    "return": "String",
+                    "deprecated": true,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "type": "User",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 }
             ]
         },
@@ -1198,49 +1575,49 @@
             "methods": [
                 {
                     "name": "Newbie",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Family",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Stammi",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Ehrenz",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Admin",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Sysadmin",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Bot",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
@@ -1255,7 +1632,7 @@
                 {
                     "name": "setSettings",
                     "return": "void",
-                    "deprecated": false,
+                    "deprecated": true,
                     "description": null,
                     "parameters": [
                         {
@@ -1269,7 +1646,7 @@
                 {
                     "name": "app",
                     "return": "void",
-                    "deprecated": false,
+                    "deprecated": true,
                     "description": null,
                     "parameters": [
                         {
@@ -1283,21 +1660,21 @@
                 {
                     "name": "isLocked",
                     "return": "Boolean",
-                    "deprecated": false,
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "hasPayed",
                     "return": "Boolean",
-                    "deprecated": false,
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "toString",
                     "return": "String",
-                    "deprecated": false,
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 }
@@ -1310,57 +1687,57 @@
             "methods": [
                 {
                     "name": "TIER_0",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_1",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_2",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_3",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_4",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_5",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_6",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_7",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 }
@@ -1373,22 +1750,22 @@
             "methods": [
                 {
                     "name": "Daily",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Weekly",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Monthly",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 }
@@ -1603,7 +1980,14 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "command",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "getText",
@@ -1624,7 +2008,14 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "icon",
+                            "type": "String",
+                            "optional": false,
+                            "description": "`ACHTUNG:` Hier k\u00f6nnen keine `http:\/\/` oder `https:\/\/` links verwendet werden, da der Pfad clientseitig fest implementiert ist! Es k\u00f6nnen alle Ressourcen aus dem `pics\/` Ordner genutzt werden."
+                        }
+                    ]
                 },
                 {
                     "name": "removeIcon",
@@ -1638,7 +2029,14 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "color",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Kann verschiedene Werte haben. Gradients lassen sich durch `~` setzen (Beispiel: `120,230,90~60,170,25~24,96,1` oder `modernGray`)."
+                        }
+                    ]
                 },
                 {
                     "name": "removeColor",
@@ -1649,7 +2047,7 @@
                 },
                 {
                     "name": "getHeight",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
@@ -1670,7 +2068,7 @@
                 },
                 {
                     "name": "getWidth",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
@@ -1680,7 +2078,14 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "width",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "removeWidth",
@@ -1694,7 +2099,20 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "width",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "height",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "removeSize",
@@ -1705,7 +2123,7 @@
                 },
                 {
                     "name": "getX",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
@@ -1715,11 +2133,18 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "x",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "getY",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
@@ -1729,32 +2154,107 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "y",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setPosition",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "x",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "y",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "useTextborder",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "state",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setEnabled",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "state",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "toString",
                     "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "constructor",
+                    "return": "KButton",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "text",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        },
+                        {
+                            "name": "command",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "setID",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getID",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
@@ -1771,105 +2271,364 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "width",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "height",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setSize",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "width",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "height",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setPosition",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "x",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "y",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setX",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "x",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setY",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "y",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setLabel",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "text",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Setzt ein mittigplatzierten Text"
+                        }
+                    ]
                 },
                 {
                     "name": "setLabelPosition",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "x",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "y",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setLabelColor",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "color",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "enableLabelBorder",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "state",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setBorder",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "size",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setQuadcut",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "size",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setShadow",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "position",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "setMirror",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "state",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": "Spiegelt das Bild"
+                        }
+                    ]
                 },
                 {
                     "name": "setGreyscale",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "state",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "toString",
                     "return": "String",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "only_path",
+                            "type": "Boolean",
+                            "optional": true,
+                            "description": "Gibt (wenn `true`) nur die Image-URL zur\u00fcck (ohne KCode)"
+                        }
+                    ]
+                },
+                {
+                    "name": "constructor",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "file",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Kann ein `http:\/\/` oder `https:\/\/` link sein. Ist kein Path angegeben, wird automatisch auf die URL `http:\/\/chat.knuddels.de\/pics\/` verwiesen. F\u00e4ngt die Datei mit `\/` oder `~` an, so wird der Home-Path von der App genutzt (`http:\/\/apps[0-9].knuddels.biz\/appimg\/$ChatServer.$Channel.$AppServer_co$UserID_co$AppName\/`)"
+                        }
+                    ]
+                },
+                {
+                    "name": "alwaysCopy",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "state",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "noPush",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "state",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": "Verhindert, sofern das Image mit einem Link verbunden ist, dass dieses sich bei MouseClick nach \"unten dr\u00fcckt\"."
+                        }
+                    ]
+                },
+                {
+                    "name": "setLabelSize",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "size",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "addCustom",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "F\u00fcgt ein NameValue-Pair der Pseudo-CSS hinzu sofern diese nicht nicht im Framework registriert ist",
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "value",
+                            "type": "String, Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "setTransparency",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": "Setzt die Transparenz von `0`% bis `100`%",
+                    "parameters": [
+                        {
+                            "name": "opacity",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "setMouseSize",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "width",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "height",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "setMousePosition",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "x",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "y",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 }
             ]
         },
@@ -1883,18 +2642,85 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "command_left",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "command_right",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "enableHover",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "state",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": "Ist ein `KImage` gebunden tritt automatisch die Pseudo-CSS `nopush` in kraft."
+                        }
+                    ]
                 },
                 {
                     "name": "toString",
                     "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "constructor",
+                    "return": "KLink",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "text",
+                            "type": "String, KImage",
+                            "optional": true,
+                            "description": null
+                        },
+                        {
+                            "name": "command_left",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        },
+                        {
+                            "name": "command_right",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "setHoverImage",
+                    "return": "image",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "image",
+                            "type": "KImage",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getText",
+                    "return": "String, KImage",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
@@ -1911,7 +2737,14 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "element",
+                            "type": "KRow",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "toString",
@@ -1932,7 +2765,14 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "element",
+                            "type": "KCell",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "getCells",
@@ -1946,7 +2786,14 @@
                     "return": "String",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "display",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": "Display the first `\u00b0>{tr}<\u00b0`"
+                        }
+                    ]
                 }
             ]
         },
@@ -1968,6 +2815,20 @@
                     "deprecated": false,
                     "description": null,
                     "parameters": []
+                },
+                {
+                    "name": "constructor",
+                    "return": "KCell",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "size",
+                            "type": "Number, String",
+                            "optional": false,
+                            "description": "Kann eine Zahl sein oder aber auch vordefinierte Konstanten wie`w1`, `w1,middle,lnorth`, `min3`, `min264` oder auch `min264`"
+                        }
+                    ]
                 }
             ]
         },
@@ -1981,7 +2842,14 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "hex",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "toString",
@@ -1989,6 +2857,32 @@
                     "deprecated": false,
                     "description": null,
                     "parameters": []
+                },
+                {
+                    "name": "constructor",
+                    "return": "KColor",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "red",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "green",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "blue",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 }
             ]
         },
@@ -2126,10 +3020,65 @@
             ]
         },
         {
-            "name": "KFont",
+            "name": "ColorInstance",
             "static": false,
-            "source": "framework\/ui\/KFont.js",
+            "source": "framework\/ui\/KColor.js",
             "methods": [
+                {
+                    "name": "constructor",
+                    "return": "ColorInstance",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "key",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Der Color-Key der beim KCode angegeben wird. Schwarz w\u00e4re zum Beispiel `K` (abgeleitet von black) und wird im KCode `\u00b0K\u00b0` geschrieben."
+                        },
+                        {
+                            "name": "rgb",
+                            "type": "Number[]",
+                            "optional": false,
+                            "description": "RGB als Array"
+                        }
+                    ]
+                },
+                {
+                    "name": "getColorKey",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getRGB",
+                    "return": "Number[]",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getRed",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getGreen",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getBlue",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
                 {
                     "name": "toString",
                     "return": "String",
@@ -2140,27 +3089,67 @@
             ]
         },
         {
+            "name": "KFont",
+            "static": false,
+            "source": "framework\/ui\/KFont.js",
+            "methods": [
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "constructor",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Name der Font. Es k\u00f6nnen alle Standard-Systemfonts wie zum Beispiel `Arial`, `Impact` oder `serif` verwendet werden. Das Applet l\u00e4dt folgende zus\u00e4tzliche Fonts als TTF-Format: `RobotoBold`, `RobotoLight`, `FinelinerScript`"
+                        },
+                        {
+                            "name": "style",
+                            "type": "FontStyle",
+                            "optional": false,
+                            "description": "Der Stil der Font. Es k\u00f6nnen mehrere FontStyle verwendet werden."
+                        },
+                        {
+                            "name": "size",
+                            "type": "Number",
+                            "optional": false,
+                            "description": "Schriftgr\u00f6\u00dfe"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "name": "FontStyle",
             "static": true,
             "source": "framework\/ui\/KFont.js",
             "methods": [
                 {
                     "name": "PLAIN",
-                    "return": "byte",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "BOLD",
-                    "return": "byte",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "ITALIC",
-                    "return": "byte",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
@@ -2177,14 +3166,285 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "time",
+                            "type": "Number",
+                            "optional": false,
+                            "description": "Angabe in `Millisekunden`"
+                        }
+                    ]
                 },
                 {
                     "name": "setFormat",
                     "return": "void",
                     "deprecated": false,
                     "description": null,
+                    "parameters": [
+                        {
+                            "name": "format",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Formatiert den Text in einer Applet-Sprache (Beispiels: `EN` f\u00fcr Knuddels.com oder `DE` f\u00fcr Knuddels.de)\r\nAlternativ kann ein DateFormat-String in Form von `[$FORMAT'$STRING']` verwendet werden der folgende Inhalte enth\u00e4lt: `[H' Stunden']`, `[m' Minuten']`, `[s' Sekunden']`"
+                        }
+                    ]
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
                     "parameters": []
+                },
+                {
+                    "name": "setText",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "text",
+                            "type": "String",
+                            "optional": false,
+                            "description": "Text der angezeigt wird sobald der Countdown abgelaufen ist. Hier kann auch der `\/close`-Befehl verwendet werden um das aktuelle Fenster zu schlie\u00dfen."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "KTooltip",
+            "static": false,
+            "source": "framework\/ui\/KTooltip.js",
+            "methods": [
+                {
+                    "name": "constructor",
+                    "return": "KTooltip",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "content",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "setSize",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "width",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "height",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "setWidth",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "width",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "setHeight",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "height",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "append",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "content",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "newLine",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getCommand",
+                    "return": "KLink",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "text",
+                            "type": "String, KLink",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "toString",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                }
+            ]
+        },
+        {
+            "name": "KGroup",
+            "static": false,
+            "source": "framework\/ui\/KGroup.js",
+            "methods": [
+                {
+                    "name": "add",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "content",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "remove",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "index",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "update",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "index",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "content",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "show",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "index",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "enableBoxLayout",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "state",
+                            "type": "Boolean",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getNavigation",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "titles",
+                            "type": "String[]",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getTabCommand",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "index",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "switchTab",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "index",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "toString",
@@ -2392,6 +3652,27 @@
                             "description": null
                         }
                     ]
+                },
+                {
+                    "name": "urlencode",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "Enkodiert den String URL-Konform",
+                    "parameters": []
+                },
+                {
+                    "name": "formater",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": "Ersetzt eine Zeichenkette mit einem Objekt",
+                    "parameters": [
+                        {
+                            "name": "object",
+                            "type": "Object",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 }
             ]
         },
@@ -2405,7 +3686,14 @@
                     "return": "void",
                     "deprecated": false,
                     "description": null,
-                    "parameters": []
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "Mixed",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
                 },
                 {
                     "name": "toString",
@@ -2415,9 +3703,280 @@
                     "parameters": []
                 }
             ]
+        },
+        {
+            "name": "User",
+            "static": true,
+            "source": "framework\/tools\/User.js",
+            "methods": [
+                {
+                    "name": "private",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getID",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "post",
+                    "return": "void",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "topic",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "message",
+                            "type": "String",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "getProfilePicture",
+                    "return": "String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getKonto",
+                    "return": "Object",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "getKn",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": []
+                },
+                {
+                    "name": "addKn",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "kn",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                },
+                {
+                    "name": "subKn",
+                    "return": "Boolean",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "kn",
+                            "type": "Number",
+                            "optional": false,
+                            "description": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Functions",
+            "static": true,
+            "source": "framework\/tools\/Functions.js",
+            "methods": [
+                {
+                    "name": "isTypeOf",
+                    "return": "Boolean, String",
+                    "deprecated": false,
+                    "description": null,
+                    "parameters": [
+                        {
+                            "name": "object",
+                            "type": "Object",
+                            "optional": false,
+                            "description": null
+                        },
+                        {
+                            "name": "name",
+                            "type": "String",
+                            "optional": true,
+                            "description": null
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "constants": [
+        {
+            "name": "Background",
+            "static": true,
+            "source": "framework\/core\/Channel.js",
+            "methods": [
+                {
+                    "name": "SCALED",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Strecken",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_FILLED_MODE1",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert (F\u00fcllend, Zentriert, Mode1)",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_FILLED_MODE2",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert (F\u00fcllend, Zentriert, Mode2)",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_FILLED_MODE3",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert (F\u00fcllend, Zentriert, Mode3)",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_COMPLETE_CENTERED",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert (Komplett sichtbar, Zentriert)",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_HEIGHT_RIGHT",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert auf H\u00f6he (Rechts",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_HEIGHT_TOP",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert auf Breite (Oben)",
+                    "parameters": []
+                },
+                {
+                    "name": "SCALE_HEIGHT_BOTTOM",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Skaliert auf Breite (Unten)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_ZOOM_X2",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (2fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_ZOOM_X3",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (3fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_HORIZONTAL",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Zeilenweise versetzt)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_ZOOM_X2",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Zeilenweise, 2fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_ZOOM_X3",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Zeilenweise, 3fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_VERTICAL",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Spaltenweise)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_VERTICAL_ZOOM_X2",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Spaltenweise, 2fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "TILED_OFFSET_VERTICAL_ZOOM_X3",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Gekachelt (Spaltenweise, 3fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "CENTERED",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Zentriert",
+                    "parameters": []
+                },
+                {
+                    "name": "CENTERED_ZOOM_X2",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Zentriert (2fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                },
+                {
+                    "name": "CENTERED_ZOOM_X3",
+                    "return": "Number",
+                    "deprecated": false,
+                    "description": "Zentriert (3fache Gr\u00f6\u00dfe)",
+                    "parameters": []
+                }
+            ]
+        },
         {
             "name": "Alignment",
             "static": true,
@@ -2460,49 +4019,49 @@
             "methods": [
                 {
                     "name": "Newbie",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Family",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Stammi",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Ehrenz",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Admin",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Sysadmin",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Bot",
-                    "return": "Integer",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
@@ -2516,57 +4075,57 @@
             "methods": [
                 {
                     "name": "TIER_0",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_1",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_2",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_3",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_4",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_5",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_6",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "TIER_7",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 }
@@ -2579,22 +4138,22 @@
             "methods": [
                 {
                     "name": "Daily",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Weekly",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "Monthly",
-                    "return": "byte",
-                    "deprecated": false,
+                    "return": "Number",
+                    "deprecated": true,
                     "description": null,
                     "parameters": []
                 }
@@ -2733,21 +4292,21 @@
             "methods": [
                 {
                     "name": "PLAIN",
-                    "return": "byte",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "BOLD",
-                    "return": "byte",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []
                 },
                 {
                     "name": "ITALIC",
-                    "return": "byte",
+                    "return": "Number",
                     "deprecated": false,
                     "description": null,
                     "parameters": []

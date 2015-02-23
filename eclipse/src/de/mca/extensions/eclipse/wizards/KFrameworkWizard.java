@@ -6,6 +6,7 @@ public class KFrameworkWizard extends KnuddelsWizard {
 		super();
 		setWindowTitle("MyChannel-Apps");
 		setNeedsProgressMonitor(true);
+		setTemplate("templates/kframework");
 		page = new KFramework(selection);
 	}
 	

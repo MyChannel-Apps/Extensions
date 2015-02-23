@@ -1,5 +1,11 @@
 package de.mca.extensions.eclipse.wizards;
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,8 +20,10 @@ import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ProjectScope;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.preferences.IScopeContext;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -37,6 +45,7 @@ public class KnuddelsWizard extends org.eclipse.jface.wizard.Wizard implements I
 	private String app_name			= "";
 	private String app_version		= "";
 	private String app_nickname		= "";
+	private String app_template		= "templates/knuddels";
 	
 	public KnuddelsWizard() {
 		super();
@@ -48,6 +57,10 @@ public class KnuddelsWizard extends org.eclipse.jface.wizard.Wizard implements I
 
 	public void addPages() {
 		addPage(page);
+	}
+	
+	public void setTemplate(String path) {
+		this.app_template = path;
 	}
 
 	public boolean performFinish() {
@@ -187,127 +200,53 @@ public class KnuddelsWizard extends org.eclipse.jface.wizard.Wizard implements I
 		config.setProperty("mayBeInstalledBy.1", "*.knuddelsDE");
 		saveProperties(config, project.getFile("app.config"));
 		
-		createMain(project);
+		loadTemplate(project);
+	}
+
+	private void loadTemplate(IProject project) throws CoreException {
+		File projDir = new File(project.getLocationURI().getPath());
+		
+		try {
+			File template = new File(FileLocator.toFileURL(Platform.getBundle("de.mca.extensions.eclipse").getEntry(this.app_template)).getFile());
+			copyDirectory(template, projDir);
+			project.refreshLocal(IProject.DEPTH_INFINITE, null);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
-	private void createMain(IProject project) throws CoreException {
-		StringBuilding content = new StringBuilding();
-		
-		// Start
-		content.append("var App = (new function() {");
-		content.appendLine();
-		
-		// onAppStart
-		content.append("this.onAppStart = function() {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-		content.appendLine();
+	public void copyDirectory(File srcPath, File dstPath) throws IOException {
+		if(srcPath.isDirectory()) {
+			if(!dstPath.exists()) {
+				dstPath.mkdir();
+			}
 
-		// onPrepareShutdown
-		content.append("this.onPrepareShutdown = function(secondsTillShutdown) {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-		content.appendLine();
-
-		// onShutdown
-		content.append("this.onShutdown = function() {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-		content.appendLine();
+			String files[] = srcPath.list();
+			
+			for(int i = 0; i < files.length; i++) {
+				copyDirectory(new File(srcPath, files[i]), new File(dstPath, files[i]));
+			}
+		} else {
+			if(!srcPath.exists()) {
+				System.out.println("File or directory does not exist.");
+			} else {
+				InputStream in = new FileInputStream(srcPath);
+		        OutputStream out = new FileOutputStream(dstPath);
+    
+				// Transfer bytes from in to out
+		        byte[] buf = new byte[1024];
+				int len;
+				
+		        while((len = in.read(buf)) > 0) {
+					out.write(buf, 0, len);
+				}
+		        
+				in.close();
+		        out.close();
+			}
+		}
 		
-		// onUserJoined
-		content.append("this.onUserJoined = function(user) {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-		content.appendLine();
-		
-		// onUserLeft
-		content.append("this.onUserLeft = function(user) {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-		content.appendLine();
-		
-		// mayJoinChannel
-		content.append("this.mayJoinChannel = function(user) {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-		content.appendLine();
-		
-		// maySendPublicMessage
-		content.append("this.maySendPublicMessage = function(publicMessage) {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-		content.appendLine();
-		
-		// onPrivateMessage
-		content.append("this.onPrivateMessage = function(privateMessage) {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-		content.appendLine();
-		
-		// onPublicMessage
-		content.append("this.onPublicMessage = function(publicMessage) {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-		content.appendLine();
-		
-		// onKnuddelReceived
-		content.append("this.onKnuddelReceived = function(sender, receiver, knuddelAmount) {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-		content.appendLine();
-		
-		// onUserDiced
-		content.append("this.onUserDiced = function(diceEvent) {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-		content.appendLine();
-		
-		// chatCommands
-		content.append("this.chatCommands = {", 1);
-		content.appendLine();
-		content.append("/* @ToDo auto-generated */", 2);
-		content.appendLine();
-		content.append("};", 1);
-		content.appendLine();
-
-		// End
-		content.append("}());");
-		
-		createContent(content.toString(), project.getFile("main.js"));		
+		System.out.println("Directory copied.");
 	}
 	
 	private void createContent(String input, IFile file) {

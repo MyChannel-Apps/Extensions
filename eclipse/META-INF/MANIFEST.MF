@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MyChannel Apps
 Bundle-SymbolicName: de.mca.extensions.eclipse;singleton:=true
-Bundle-Version: 1.0.0.beta
+Bundle-Version: 1.0.2
 Bundle-Activator: de.mca.extensions.eclipse.Activator
 Bundle-Vendor: MyChannel-Apps.de
 Require-Bundle: org.eclipse.ui,
@@ -20,3 +20,4 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.databinding.beans
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .

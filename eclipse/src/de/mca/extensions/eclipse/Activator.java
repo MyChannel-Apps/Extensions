@@ -1,4 +1,5 @@
 package de.mca.extensions.eclipse;
+import java.util.HashMap;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -7,6 +8,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin {
 	public static final String PLUGIN_ID = "de.mca.extensions.eclipse";
 	private static Activator plugin;
+	public static HashMap<String, Autocomplete> autocomplete;
 	
 	public Activator() {
 		/* Do Nothing */
@@ -14,7 +16,10 @@ public class Activator extends AbstractUIPlugin {
 	
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
-		plugin = this;
+		plugin			= this;
+		autocomplete	= new HashMap<String, Autocomplete>();
+		createAutocompletement("knuddels");
+		createAutocompletement("kframework");
 	}
 	
 	public void stop(BundleContext context) throws Exception {
@@ -24,6 +29,15 @@ public class Activator extends AbstractUIPlugin {
 	
 	public static Activator getDefault() {
 		return plugin;
+	}
+	
+	public static void createAutocompletement(String name) {
+		Autocomplete data = new Autocomplete(name);
+		autocomplete.put(data.getID(), data);
+	}
+	
+	public static Autocomplete getAutocompletement(String name) {
+		return autocomplete.get(name);
 	}
 	
 	public static ImageDescriptor getImageDescriptor(String path) {
