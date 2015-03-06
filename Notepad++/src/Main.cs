@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using NppPluginNET;
+using Knuddels.Forms;
 
 namespace Knuddels {
 	class Main {
@@ -57,7 +58,8 @@ namespace Knuddels {
 
 		#region " Menu functions "
 			internal static void myMenuFunction() {
-				MessageBox.Show("MyChannel-Apps.de");
+				About a = new About();
+				a.Show();
 			}
 
 			internal static void myDockableDialog() {
