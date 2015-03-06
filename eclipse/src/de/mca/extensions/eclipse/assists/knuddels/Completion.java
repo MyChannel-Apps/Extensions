@@ -1,16 +1,27 @@
 package de.mca.extensions.eclipse.assists.knuddels;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.text.ITextViewer;
+import org.eclipse.jface.text.contentassist.CompletionProposal;
 import org.eclipse.jface.text.contentassist.ICompletionProposal;
 import org.eclipse.jface.text.contentassist.IContextInformation;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.wst.jsdt.ui.text.java.ContentAssistInvocationContext;
 import org.eclipse.wst.jsdt.ui.text.java.IJavaCompletionProposalComputer;
 
+import de.mca.extensions.eclipse.Activator;
+import de.mca.extensions.eclipse.Autocomplete;
+import de.mca.extensions.eclipse.data.APIClass;
+import de.mca.extensions.eclipse.data.APIMethod;
+import de.mca.extensions.eclipse.interfaces.APIEntry;
+
 public class Completion implements IJavaCompletionProposalComputer {
+	protected Autocomplete autocomplete;
+	
 	@Override
 	public List<ICompletionProposal> computeCompletionProposals(ContentAssistInvocationContext context, IProgressMonitor monitor) {
 		List<ICompletionProposal> list	= new ArrayList<ICompletionProposal>();
@@ -18,35 +29,30 @@ public class Completion implements IJavaCompletionProposalComputer {
 		int offset						= context.getInvocationOffset();
         IDocument document				= viewer.getDocument();
         String input					= getInputString(document, offset);
-
+    	int length						= input.length();
+    	boolean is_new					= getInputString(document, offset - 1).equalsIgnoreCase("new");
+    	
         // Calculate actual class
         if(input.equals("") || input.startsWith("this.")) {
         	System.err.println("Can't find actual functions context!");
         } else {
-        	//int length					= input.length();
-        	
-        	/*
-            Model model					= ContentFromSources.getDefaultInstances().model;
-            
-            if(model == null){
-            	/ Do Nothing /
-            }	
-            
-            for(Entry entry: model.findMatchingEntries(input)){
-            	String trigger	= entry.trigger;
-            	String desc		= entry.desc;
-            	//Image image	= (entry.type == EntryType.clazz) ? CLASS : METHOD;
-            	Image image		= null;
-            	
-            	switch(entry.type) {
-            		case module:	image = MODULE; break;
-            		case method:	image = METHOD; break;
-            		case clazz:		image = CLASS; break;        		
-            		case property:	image = PROPERTY; break;	
-            	}
-            	
-    			list.add(new CompletionProposal(trigger, offset - length, length, trigger.length(), image, trigger, null, desc)); 
-            }*/
+        	if(this.autocomplete != null) {
+        		List<APIEntry> result = this.autocomplete.find(input);
+        		
+        		for(APIEntry entry : result) {
+        			String trigger	= entry.getName();
+        			String desc		= entry.getDescription();
+        			Image image		= null;
+        			
+        			if(entry instanceof APIClass) {
+        				image		= Activator.getImageDescriptor("icons/class.gif").createImage();
+        			} else if(entry instanceof APIMethod) {
+        				image		= Activator.getImageDescriptor("icons/method.gif").createImage();        				
+        			}
+        			
+        			list.add(new CompletionProposal(trigger, offset - length, length, trigger.length(), image, trigger, null, desc));
+        		}
+        	}
         }
         
         System.err.println("Compute: " + input);
@@ -66,12 +72,12 @@ public class Completion implements IJavaCompletionProposalComputer {
 
 	@Override
 	public void sessionEnded() {
-		/* Do Nothing */
+		this.autocomplete = null;
 	}
 
 	@Override
 	public void sessionStarted() {
-		/* Do Nothing */
+		this.autocomplete = Activator.getAutocompletement("knuddels");
 	}
 	
 	public String getInputString(IDocument document, int offset) {

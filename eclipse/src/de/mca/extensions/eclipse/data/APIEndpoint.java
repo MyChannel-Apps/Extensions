@@ -7,12 +7,8 @@ public class APIEndpoint {
 	private String data_url						= "";
 	private HashMap<String, APIClass> classes	= new HashMap<String, APIClass>();
 	
-	public APIEndpoint() {
-		
-	}
-	
 	public void addClass(APIClass clazz) {
-		this.classes.put(clazz.getClassName().toLowerCase(), clazz);
+		this.classes.put(clazz.getName().toLowerCase(), clazz);
 	}
 	
 	public APIClass getClass(String name) {

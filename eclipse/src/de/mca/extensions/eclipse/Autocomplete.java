@@ -4,12 +4,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map.Entry;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import de.mca.extensions.eclipse.data.APIClass;
+import de.mca.extensions.eclipse.interfaces.APIEntry;
 
 public class Autocomplete {
 	private String identifier			= "";
@@ -70,12 +74,6 @@ public class Autocomplete {
 		if(main.has("classes")) {
 			this.parseClasses(main.getJSONArray("classes"));
 		}
-		
-		System.out.println("Fetching API");
-		System.out.println("Identifier: " + this.getID());
-		System.out.println("Version: " + this.getVersion());
-		System.out.println("URL: " + this.getURL());
-		System.out.println("Classes: " + this.getClasses().size());
 	}
 	
 	private void parseClasses(JSONArray classes) throws JSONException {
@@ -90,11 +88,38 @@ public class Autocomplete {
 					clazz.setStatic(entry.getBoolean("static"));
 				}
 				
-				// source
-				// methods
+				if(entry.has("source")) {
+					clazz.setSource(entry.getString("source"));
+				}
 				
-				this.classes.put(clazz.getClassName(), clazz);
+				if(entry.has("methods")) {
+					this.parseMethods(entry.getJSONArray("methods"));
+				}
+				
+				this.classes.put(clazz.getName(), clazz);
 			}
 		}
+	}
+	
+	private void parseMethods(JSONArray methods) throws JSONException {
+		for(int index = 0; index < methods.length(); ++index) {
+			JSONObject entry	= methods.getJSONObject(index);
+		}
+	}
+
+	public List<APIEntry> find(String input) {
+		List<APIEntry> matches = new LinkedList<APIEntry>();
+		
+		if((input == null) || ("".equals(input))) {
+			return matches;
+		}
+		
+		for(Entry<String, APIClass> entry: classes.entrySet()) {
+			if(entry.getKey().startsWith(input)){
+				matches.add(entry.getValue());
+			}
+		}
+		
+		return matches;
 	}
 }

@@ -60,9 +60,10 @@ import de.mca.extensions.eclipse.data.AppPermission;
 import de.mca.extensions.eclipse.data.AppServer.Server;
 import de.mca.extensions.eclipse.tools.StringBuilding;
 
-public class Configuration extends EditorPart {
+public class Configuration extends EditorPart implements IEditorPart {
 	private Text app_name;
 	private Text app_version;
+	private ScrolledForm form;
 	private Composite permission_table;
 	private Composite composite_permissions;
 	private FormToolkit toolkit;
@@ -163,13 +164,14 @@ public class Configuration extends EditorPart {
 
 	public Configuration() {
 		ResourcesPlugin.getWorkspace().addResourceChangeListener(resourceChangeListener);
+		setFocus();
 	}
 
 	@Override
 	public void createPartControl(Composite parent) {
 		ui_available		= true;
 		toolkit				= new FormToolkit(parent.getDisplay());
-		ScrolledForm form	= toolkit.createScrolledForm(parent);
+		form				= toolkit.createScrolledForm(parent);
 		form.setText("App Configuration");
 		form.getBody().setLayout(new TableWrapLayout());
 		form.getBody().setLayoutData(new TableWrapData(TableWrapData.FILL_GRAB));
@@ -383,6 +385,7 @@ public class Configuration extends EditorPart {
 	public void init(IEditorSite site, IEditorInput input) throws PartInitException {
 		setSite(site);
 		setInput(input, true);
+		setFocus();
 	}
 
 	@Override
@@ -399,14 +402,14 @@ public class Configuration extends EditorPart {
 		try {
 			IFileEditorInput editorInput = (IFileEditorInput) getEditorInput().getAdapter(IFileEditorInput.class);
 			IFile file = (IFile) editorInput.getFile();
-			
-				IPath location 	= file.getLocation();
-            	File f 			= location.toFile();
-            	InputStream in	= new FileInputStream(f);
-            	config = new Properties();
-            	config.load(in);
-				in.close();
-				updateUI();
+		
+			IPath location 	= file.getLocation();
+        	File f 			= location.toFile();
+        	InputStream in	= new FileInputStream(f);
+        	config = new Properties();
+        	config.load(in);
+			in.close();
+			updateUI();
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
@@ -457,7 +460,9 @@ public class Configuration extends EditorPart {
     		
         	composite_permissions.layout();
 		}
+		
 		setDirty(false);
+		setFocus();
 	}
 	
 	private void addPermssionEntry(AppPermission permission) {
@@ -556,13 +561,9 @@ public class Configuration extends EditorPart {
 	}
 
 	@Override
-	public void setFocus() {
-		/* Do Nothing */
-	}
-
-	@Override
 	protected void setInput(IEditorInput input) {
 		setInput(input, true);
+		setFocus();
 	}
 
 	protected void setInput(IEditorInput input, boolean loadFile) {
@@ -574,6 +575,15 @@ public class Configuration extends EditorPart {
 		
 		if(loadFile) {
 			loadFile();
+		}
+		
+		setFocus();
+	}
+
+	@Override
+	public void setFocus() {
+		if(form != null) {
+			form.setFocus();
 		}
 	}
 }
