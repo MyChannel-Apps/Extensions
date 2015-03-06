@@ -1,5 +1,5 @@
 ﻿namespace Knuddels {
-	partial class frmMyDlg {
+	partial class Dock {
 		private System.ComponentModel.IContainer components = null;
 
 		protected override void Dispose(bool disposing) {
@@ -32,8 +32,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(284, 262);
 			this.Controls.Add(this.treeView1);
-			this.Name = "frmMyDlg";
-			this.Text = "frmMyDlg";
+			this.Name = "Dock";
+			this.Text = "Dock";
 			this.ResumeLayout(false);
 
 			}

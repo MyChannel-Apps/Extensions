@@ -13,7 +13,7 @@ namespace Knuddels {
 			internal const string PluginName	= "Knuddels";
 			static string iniFilePath			= null;
 			static bool someSetting				= false;
-			static frmMyDlg frmMyDlg			= null;
+			static Dock project_dock			= null;
 			static int idMyDlg					= -1;
 			static Bitmap tbBmp					= Properties.Resources.star;
 			static Bitmap tbBmp_tbTab			= Properties.Resources.star_bmp;
@@ -61,8 +61,8 @@ namespace Knuddels {
 			}
 
 			internal static void myDockableDialog() {
-				if(frmMyDlg == null) {
-					frmMyDlg = new frmMyDlg();
+				if(project_dock == null) {
+					project_dock = new Dock();
 
 					using(Bitmap newBmp = new Bitmap(16, 16)) {
 						Graphics g				= Graphics.FromImage(newBmp);
@@ -78,7 +78,7 @@ namespace Knuddels {
 					}
 
 					NppTbData _nppTbData		= new NppTbData();
-					_nppTbData.hClient			= frmMyDlg.Handle;
+					_nppTbData.hClient			= project_dock.Handle;
 					_nppTbData.pszName			= "App Project";
 					_nppTbData.dlgID			= idMyDlg;
 					_nppTbData.uMask			= NppTbMsg.DWS_DF_CONT_RIGHT | NppTbMsg.DWS_ICONTAB | NppTbMsg.DWS_ICONBAR;
@@ -89,7 +89,7 @@ namespace Knuddels {
 					Marshal.StructureToPtr(_nppTbData, _ptrNppTbData, false);
 					Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DMMREGASDCKDLG, 0, _ptrNppTbData);
 				} else {
-					Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DMMSHOW, 0, frmMyDlg.Handle);
+					Win32.SendMessage(PluginBase.nppData._nppHandle, NppMsg.NPPM_DMMSHOW, 0, project_dock.Handle);
 				}
 			}
 		#endregion

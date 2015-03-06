@@ -6,8 +6,8 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace Knuddels {
-	public partial class frmMyDlg : Form {
-		public frmMyDlg() {
+	public partial class Dock : Form {
+		public Dock() {
 			InitializeComponent();
 		}
 	}
